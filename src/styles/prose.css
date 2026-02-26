@@ -1,0 +1,135 @@
+.prose {
+  --tw-prose-body: var(--color-text-primary);
+  --tw-prose-headings: var(--color-text-primary);
+  --tw-prose-links: var(--color-accent-primary);
+  --tw-prose-code: var(--color-accent-primary);
+  max-width: 72ch;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  scroll-margin-top: 5rem;
+  font-weight: 700;
+}
+
+.prose h2 {
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+  font-size: 1.5em;
+  border-bottom: 1px solid var(--color-bg-tertiary);
+  padding-bottom: 0.5em;
+}
+
+.prose h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.25em;
+}
+
+.prose a {
+  color: var(--color-accent-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.prose a:hover {
+  color: var(--color-accent-secondary);
+}
+
+.prose code:not(pre code) {
+  background-color: var(--color-bg-tertiary);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  font-family: var(--font-mono);
+}
+
+.prose pre {
+  background-color: var(--color-bg-secondary) !important;
+  border: 1px solid var(--color-bg-tertiary);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  overflow-x: auto;
+}
+
+.prose pre code {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.prose img {
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-bg-tertiary);
+}
+
+.prose blockquote {
+  border-left: 3px solid var(--color-accent-primary);
+  padding-left: 1em;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.prose ul {
+  list-style-type: disc;
+}
+
+.prose ol {
+  list-style-type: decimal;
+}
+
+.prose li {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid var(--color-bg-tertiary);
+  padding: 0.5em 1em;
+}
+
+.prose th {
+  background-color: var(--color-bg-secondary);
+  font-weight: 600;
+}
+
+/* Shiki code highlighting */
+[data-rehype-pretty-code-figure] pre {
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+[data-rehype-pretty-code-figure] code {
+  counter-reset: line;
+  display: grid;
+}
+
+[data-rehype-pretty-code-figure] code > [data-line] {
+  padding: 0 1.25rem;
+  border-left: 2px solid transparent;
+}
+
+[data-rehype-pretty-code-figure] code > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 1.5rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: var(--color-text-secondary);
+  opacity: 0.5;
+}
+
+[data-highlighted-line] {
+  background-color: rgba(6, 214, 160, 0.1);
+  border-left-color: var(--color-accent-primary) !important;
+}

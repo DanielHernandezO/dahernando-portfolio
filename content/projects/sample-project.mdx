@@ -1,0 +1,38 @@
+---
+title: "P2P File Exchange"
+description: "A decentralized peer-to-peer file sharing network built with Go, featuring NAT traversal, distributed hash tables, and end-to-end encryption."
+slug: "p2p-file-exchange"
+date: "2024-03-01"
+published: true
+featured: true
+tags: ["go", "networking", "distributed-systems", "p2p"]
+repository: "https://github.com/DanielHernandezO/p2p-exchange"
+---
+
+## Overview
+
+A decentralized file sharing system that enables direct peer-to-peer transfers without relying on central servers. Built entirely in Go with a focus on performance and reliability.
+
+## Architecture
+
+The system uses a **Kademlia-based DHT** (Distributed Hash Table) for peer discovery and routing. Each node maintains a routing table of known peers, organized by XOR distance.
+
+```go
+type Node struct {
+    ID        NodeID
+    Address   string
+    DHT       *DistributedHashTable
+    Transport *UDPTransport
+}
+```
+
+## Key Features
+
+- **NAT Traversal** — Uses UDP hole punching and STUN for connectivity behind firewalls
+- **Chunked Transfers** — Large files are split into chunks for parallel downloading from multiple peers
+- **End-to-End Encryption** — All transfers encrypted using TLS 1.3
+- **Resume Support** — Interrupted transfers resume from where they left off
+
+## Lessons Learned
+
+Building a P2P system taught me the fundamental challenges of distributed systems: you can't trust the network, clocks drift, and nodes disappear without warning. The key is designing protocols that are resilient to all of these failures.
