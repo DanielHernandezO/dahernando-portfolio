@@ -137,16 +137,6 @@ export function ExperiencePreview() {
           ))}
         </div>
 
-        <FadeIn delay={0.3}>
-          <div className="mt-8 text-center">
-            <a
-              href="/about"
-              className="text-sm font-medium text-accent-primary hover:underline"
-            >
-              {t("experience.viewBackground")}
-            </a>
-          </div>
-        </FadeIn>
       </Container>
     </section>
   );
