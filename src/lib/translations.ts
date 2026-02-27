@@ -62,6 +62,9 @@ export const translations = {
         "p2p-file-sharing-network":
           "A decentralized peer-to-peer file sharing network built with Go and Python, featuring flood-based search, RabbitMQ messaging, and hexagonal architecture.",
       },
+      backToProjects: "Back to projects",
+      sourceCode: "Source Code",
+      liveDemo: "Live Demo",
     },
     blogHome: {
       label: "BLOG",
@@ -168,6 +171,9 @@ export const translations = {
         "p2p-file-sharing-network":
           "Una red descentralizada de intercambio de archivos peer-to-peer construida con Go y Python, con búsqueda por inundación, mensajería RabbitMQ y arquitectura hexagonal.",
       },
+      backToProjects: "Volver a proyectos",
+      sourceCode: "Código Fuente",
+      liveDemo: "Demo en Vivo",
     },
     blogHome: {
       label: "BLOG",
