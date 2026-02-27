@@ -3,7 +3,7 @@ export const siteConfig = {
   title: "Daniel Hernandez - Software Engineer",
   description:
     "Software Engineer combining deep technical expertise with a strong business mindset. I translate complex requirements into scalable solutions that drive performance and profitability.",
-  url: "https://dahernando.dev",
+  url: "https://danielhernandezo.com",
   ogImage: "/images/og-default.png",
   links: {
     github: "https://github.com/DanielHernandezO",
