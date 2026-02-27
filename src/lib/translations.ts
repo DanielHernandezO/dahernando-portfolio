@@ -56,6 +56,12 @@ export const translations = {
         "Open source work and experiments in distributed systems, networking, and backend engineering.",
       featured: "Featured",
       empty: "No projects yet. Check back soon!",
+      descriptions: {
+        "dynamic-programming-coders-api":
+          "A Spring Boot REST API for competitive programming practice, deployed on Google Cloud App Engine with MySQL, featuring CRUD for contests, problems, users, and submissions.",
+        "p2p-file-sharing-network":
+          "A decentralized peer-to-peer file sharing network built with Go and Python, featuring flood-based search, RabbitMQ messaging, and hexagonal architecture.",
+      },
     },
     blogHome: {
       label: "BLOG",
@@ -156,6 +162,12 @@ export const translations = {
         "Trabajo open source y experimentos en sistemas distribuidos, redes y backend.",
       featured: "Destacado",
       empty: "Aún no hay proyectos. ¡Vuelve pronto!",
+      descriptions: {
+        "dynamic-programming-coders-api":
+          "Una API REST con Spring Boot para práctica de programación competitiva, desplegada en Google Cloud App Engine con MySQL, con CRUD para concursos, problemas, usuarios y envíos.",
+        "p2p-file-sharing-network":
+          "Una red descentralizada de intercambio de archivos peer-to-peer construida con Go y Python, con búsqueda por inundación, mensajería RabbitMQ y arquitectura hexagonal.",
+      },
     },
     blogHome: {
       label: "BLOG",
