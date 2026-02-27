@@ -18,6 +18,36 @@ export const translations = {
       label: "EXPERIENCE",
       title: "Where I've Worked",
       viewBackground: "View full background →",
+      yuno: {
+        bullet1:
+          "Led development of the Smart Routing module, enabling dynamic payment routing across providers to optimize approval rates and reduce processing costs",
+        bullet2:
+          "Built and maintained RESTful and gRPC APIs for payment orchestration, merchant onboarding, and provider configuration management",
+        bullet3:
+          "Developed a real-time event processing pipeline using Kafka to handle high-throughput transaction events with sub-second latency",
+        bullet4:
+          "Implemented circuit breakers, retry policies, and distributed tracing to improve system resilience across microservices",
+        bullet5:
+          "Collaborated with product and commercial teams to translate complex business requirements into scalable technical solutions",
+      },
+      meli: {
+        bullet1:
+          "Reduced operational costs by millions annually through automation and optimization of backend workflows processing financial data",
+        bullet2:
+          "Designed and implemented data protection mechanisms safeguarding sensitive information for 23,000+ users across multiple services",
+        bullet3:
+          "Improved platform observability by 75% by building monitoring dashboards and alerting systems with Datadog",
+        bullet4:
+          "Built event-driven microservices handling millions of daily transactions using Kafka, Go, and PostgreSQL",
+        bullet5:
+          "Contributed to a commerce platform serving 200M+ users across Latin America, focusing on system performance, reliability, and scalability",
+      },
+      eafit: {
+        bullet1:
+          "Supported undergraduate courses in data structures and algorithms",
+        bullet2:
+          "Guided students through problem-solving exercises and evaluated assignments",
+      },
     },
     education: {
       label: "EDUCATION",
@@ -93,7 +123,7 @@ export const translations = {
         "I'm Daniel, a Software Engineer based in Colombia, combining deep technical expertise with a strong business mindset. I thrive in cross-functional teams where clear communication and collaboration drive results. Whether it's leading technical initiatives, mentoring teammates, or translating complex requirements into scalable solutions — I believe the best software is built by people who understand both the technology and the problem it solves.",
       beyondCode: "Life Beyond Code",
       beyondCodeText:
-        "When I'm not writing code, you'll find me traveling and exploring new places, spending time with my team, friends, and family. I believe the best ideas come from diverse experiences and genuine connections.",
+        "When I'm not writing code, you'll find me spending time with my family, traveling and exploring new places, and enjoying moments with friends and teammates. I believe the best ideas come from diverse experiences and genuine connections.",
       photos: {
         traveling: "Exploring new places",
         family: "Family time",
@@ -127,6 +157,36 @@ export const translations = {
       label: "EXPERIENCIA",
       title: "Dónde He Trabajado",
       viewBackground: "Ver experiencia completa →",
+      yuno: {
+        bullet1:
+          "Lideré el desarrollo del módulo de Smart Routing, permitiendo el enrutamiento dinámico de pagos entre proveedores para optimizar tasas de aprobación y reducir costos de procesamiento",
+        bullet2:
+          "Construí y mantuve APIs RESTful y gRPC para orquestación de pagos, onboarding de comercios y gestión de configuración de proveedores",
+        bullet3:
+          "Desarrollé un pipeline de procesamiento de eventos en tiempo real usando Kafka para manejar eventos de transacciones de alto volumen con latencia inferior a un segundo",
+        bullet4:
+          "Implementé circuit breakers, políticas de reintentos y trazabilidad distribuida para mejorar la resiliencia del sistema entre microservicios",
+        bullet5:
+          "Colaboré con equipos de producto y comerciales para traducir requerimientos de negocio complejos en soluciones técnicas escalables",
+      },
+      meli: {
+        bullet1:
+          "Reduje costos operativos en millones anualmente mediante la automatización y optimización de flujos backend que procesan datos financieros",
+        bullet2:
+          "Diseñé e implementé mecanismos de protección de datos que resguardan información sensible de más de 23,000 usuarios en múltiples servicios",
+        bullet3:
+          "Mejoré la observabilidad de la plataforma en un 75% construyendo dashboards de monitoreo y sistemas de alertas con Datadog",
+        bullet4:
+          "Construí microservicios orientados a eventos que procesan millones de transacciones diarias usando Kafka, Go y PostgreSQL",
+        bullet5:
+          "Contribuí a una plataforma de comercio que atiende a más de 200M de usuarios en América Latina, enfocándome en rendimiento, confiabilidad y escalabilidad del sistema",
+      },
+      eafit: {
+        bullet1:
+          "Apoyé cursos de pregrado en estructuras de datos y algoritmos",
+        bullet2:
+          "Guié a estudiantes en ejercicios de resolución de problemas y evalué asignaciones",
+      },
     },
     education: {
       label: "EDUCACIÓN",
@@ -202,7 +262,7 @@ export const translations = {
         "Soy Daniel, un Ingeniero de Software en Colombia, combinando experiencia técnica profunda con una fuerte mentalidad de negocio. Destaco en equipos multifuncionales donde la comunicación clara y la colaboración impulsan resultados. Ya sea liderando iniciativas técnicas, mentoreando compañeros o traduciendo requerimientos complejos en soluciones escalables — creo que el mejor software lo construyen personas que entienden tanto la tecnología como el problema que resuelve.",
       beyondCode: "Vida Más Allá del Código",
       beyondCodeText:
-        "Cuando no estoy escribiendo código, me encontrarás viajando y explorando nuevos lugares, pasando tiempo con mi equipo, amigos y familia. Creo que las mejores ideas surgen de experiencias diversas y conexiones genuinas.",
+        "Cuando no estoy escribiendo código, me encontrarás pasando tiempo con mi familia, viajando y explorando nuevos lugares, y disfrutando momentos con amigos y compañeros. Creo que las mejores ideas surgen de experiencias diversas y conexiones genuinas.",
       photos: {
         traveling: "Explorando nuevos lugares",
         family: "Tiempo en familia",

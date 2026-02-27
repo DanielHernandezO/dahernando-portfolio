@@ -10,12 +10,12 @@ const experiences = [
   {
     company: "YUNO",
     roles: [{ title: "Backend Engineer", period: "Nov 2025 — Present" }],
-    bullets: [
-      "Led development of the Smart Routing module, enabling dynamic transaction routing to optimize approval rates and reduce processing costs across multiple payment providers",
-      "Built a real-time event processing pipeline using Kafka and Go, handling high-throughput transaction events with sub-second latency",
-      "Designed and implemented RESTful and gRPC APIs for merchant onboarding and configuration management",
-      "Improved system reliability by implementing circuit breakers, retry policies, and distributed tracing across microservices",
-      "Collaborated with product and commercial teams to translate business requirements into scalable backend solutions",
+    bulletKeys: [
+      "experience.yuno.bullet1",
+      "experience.yuno.bullet2",
+      "experience.yuno.bullet3",
+      "experience.yuno.bullet4",
+      "experience.yuno.bullet5",
     ],
     tags: [
       "Go",
@@ -36,12 +36,12 @@ const experiences = [
       { title: "Software Engineer", period: "Jan 2023 — Nov 2025" },
       { title: "Software Developer", period: "Jan 2022 — Jan 2023" },
     ],
-    bullets: [
-      "Reduced operational costs by millions through automation and optimization of backend services in Go and Java",
-      "Enhanced observability by 75% by implementing comprehensive monitoring dashboards and alerting with Datadog",
-      "Secured data for 23K+ users by designing and implementing data protection mechanisms across services",
-      "Built event-driven microservices processing millions of daily transactions using Kafka and PostgreSQL",
-      "Contributed to a platform serving 200M+ users across Latin America, focusing on performance and reliability",
+    bulletKeys: [
+      "experience.meli.bullet1",
+      "experience.meli.bullet2",
+      "experience.meli.bullet3",
+      "experience.meli.bullet4",
+      "experience.meli.bullet5",
     ],
     tags: ["Go", "Java", "Kafka", "PostgreSQL", "Datadog", "Docker", "AWS"],
     highlight: false,
@@ -50,9 +50,9 @@ const experiences = [
   {
     company: "Universidad EAFIT",
     roles: [{ title: "Teacher Assistant", period: "Jun 2021 — Dec 2021" }],
-    bullets: [
-      "Supported courses in data structures and algorithms, guiding students through complex problem-solving exercises",
-      "Evaluated assignments and provided mentorship to undergraduate students",
+    bulletKeys: [
+      "experience.eafit.bullet1",
+      "experience.eafit.bullet2",
     ],
     tags: [],
     highlight: false,
@@ -114,13 +114,13 @@ export function ExperiencePreview() {
                     </div>
                   ))}
                   <ul className="mt-3 space-y-1.5">
-                    {exp.bullets.map((bullet) => (
+                    {exp.bulletKeys.map((key) => (
                       <li
-                        key={bullet}
+                        key={key}
                         className="text-sm leading-relaxed text-text-secondary"
                       >
                         <span className="mr-2 text-accent-primary">•</span>
-                        {bullet}
+                        {t(key)}
                       </li>
                     ))}
                   </ul>
