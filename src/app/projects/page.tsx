@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 import { ExternalLink, Github } from "lucide-react";
 import { Container } from "@/components/ui/container";
@@ -6,25 +7,22 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { FadeIn } from "@/components/animations/fade-in";
 import { getPublishedProjects, getProjectTags } from "@/lib/content";
-
-export const metadata: Metadata = {
-  title: "Projects",
-  description:
-    "Open source projects and experiments in distributed systems, networking, and backend engineering.",
-};
+import { useLocale } from "@/hooks/use-locale";
 
 export default function ProjectsPage() {
   const projects = getPublishedProjects();
   const tags = getProjectTags();
+  const { t } = useLocale();
 
   return (
     <section className="py-20">
       <Container>
         <div className="mb-12">
-          <h1 className="mb-4 text-4xl font-bold">Projects</h1>
+          <h1 className="mb-4 text-4xl font-bold">
+            {t("projects.pageTitle")}
+          </h1>
           <p className="text-lg text-text-secondary">
-            Open source work and experiments in distributed systems, networking,
-            and backend engineering.
+            {t("projects.pageDescription")}
           </p>
         </div>
 
@@ -45,7 +43,7 @@ export default function ProjectsPage() {
                 <Card className="flex h-full flex-col">
                   {project.featured && (
                     <Badge variant="accent" className="mb-3 self-start">
-                      Featured
+                      {t("projects.featured")}
                     </Badge>
                   )}
                   <h3 className="text-lg font-semibold">{project.title}</h3>
@@ -60,12 +58,12 @@ export default function ProjectsPage() {
                   <div className="mt-4 flex items-center gap-3 border-t border-bg-tertiary pt-4">
                     {project.repository && (
                       <span className="flex items-center gap-1 text-xs text-text-secondary">
-                        <Github size={14} /> Code
+                        <Github size={14} /> {t("projects.code")}
                       </span>
                     )}
                     {project.url && (
                       <span className="flex items-center gap-1 text-xs text-text-secondary">
-                        <ExternalLink size={14} /> Live
+                        <ExternalLink size={14} /> {t("projects.live")}
                       </span>
                     )}
                   </div>
@@ -77,7 +75,7 @@ export default function ProjectsPage() {
 
         {projects.length === 0 && (
           <p className="text-center text-text-secondary">
-            No projects yet. Check back soon!
+            {t("projects.empty")}
           </p>
         )}
       </Container>

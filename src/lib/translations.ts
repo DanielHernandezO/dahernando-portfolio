@@ -51,6 +51,11 @@ export const translations = {
       viewAll: "View all",
       code: "Code",
       live: "Live",
+      pageTitle: "Projects",
+      pageDescription:
+        "Open source work and experiments in distributed systems, networking, and backend engineering.",
+      featured: "Featured",
+      empty: "No projects yet. Check back soon!",
     },
     blogHome: {
       label: "BLOG",
@@ -146,6 +151,11 @@ export const translations = {
       viewAll: "Ver todo",
       code: "Código",
       live: "Demo",
+      pageTitle: "Proyectos",
+      pageDescription:
+        "Trabajo open source y experimentos en sistemas distribuidos, redes y backend.",
+      featured: "Destacado",
+      empty: "Aún no hay proyectos. ¡Vuelve pronto!",
     },
     blogHome: {
       label: "BLOG",
