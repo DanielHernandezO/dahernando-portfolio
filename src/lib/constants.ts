@@ -2,13 +2,13 @@ export const siteConfig = {
   name: "Daniel Hernandez",
   title: "Daniel Hernandez - Software Engineer",
   description:
-    "Software Engineer specializing in distributed systems, payments infrastructure, and scalable backend architecture. Currently at YUNO.",
+    "Software Engineer combining deep technical expertise with a strong business mindset. I translate complex requirements into scalable solutions that drive performance and profitability.",
   url: "https://dahernando.dev",
   ogImage: "/images/og-default.png",
   links: {
     github: "https://github.com/DanielHernandezO",
     linkedin: "https://linkedin.com/in/dahernando",
-    email: "mailto:danielhernandezosorio@gmail.com",
+    email: "mailto:dahernandoy@gmail.com",
   },
 } as const;
 

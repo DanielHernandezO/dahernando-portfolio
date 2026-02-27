@@ -1,0 +1,46 @@
+---
+title: "Dynamic Programming Coders API"
+description: "A Spring Boot REST API for competitive programming practice, deployed on Google Cloud App Engine with MySQL, featuring CRUD for contests, problems, users, and submissions."
+slug: "dynamic-programming-coders-api"
+date: "2023-06-01"
+published: true
+featured: true
+tags: ["java", "spring-boot", "rest-api", "google-cloud", "mysql"]
+repository: "https://github.com/DanielHernandezO/DynamicProgrammingCodersAPI"
+---
+
+## Overview
+
+A REST API designed as a platform for competitive programming practice, enabling users to manage contests, problems, and submissions. Built with Spring Boot and deployed on Google Cloud App Engine with Cloud SQL (MySQL) as the backing database.
+
+## Architecture
+
+The application follows a clean **layered architecture** with clear separation of concerns:
+
+- **Controllers** — 4 REST controllers handling HTTP requests for contests, problems, users, and submissions
+- **Services** — Business logic layer implementing validation and orchestration
+- **Repositories** — Data access layer using Spring Data JPA
+- **DTOs** — Data Transfer Objects with ModelMapper for entity-DTO conversion
+- **Models** — 10 JPA entity models representing the domain
+
+## Tech Stack
+
+- **Java 11** with **Spring Boot**
+- **Maven** for dependency management
+- **Spring Data JPA** for database access
+- **MySQL** (Google Cloud SQL) for persistence
+- **ModelMapper** for object mapping
+- **Lombok** for boilerplate reduction
+- **Google Cloud App Engine** for deployment
+
+## Key Features
+
+- **Contests Management** — Create, read, update, and delete programming contests with metadata
+- **Problem Bank** — Manage algorithmic problems with descriptions, difficulty levels, and categories
+- **User Profiles** — User registration and management with submission tracking
+- **Submissions** — Track user solutions with verdict, runtime, and memory usage
+- **RESTful Design** — Clean API following REST conventions with proper HTTP status codes
+
+## Lessons Learned
+
+This project was an exercise in designing clean REST APIs with proper separation of concerns. Using the service/repository pattern with DTOs kept the codebase maintainable as the number of entities grew. Deploying on Google Cloud App Engine provided experience with managed cloud platforms and Cloud SQL configuration.

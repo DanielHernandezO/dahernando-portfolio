@@ -1,38 +1,48 @@
 ---
-title: "P2P File Exchange"
-description: "A decentralized peer-to-peer file sharing network built with Go, featuring NAT traversal, distributed hash tables, and end-to-end encryption."
-slug: "p2p-file-exchange"
+title: "P2P File Sharing Network"
+description: "A decentralized peer-to-peer file sharing network built with Go and Python, featuring flood-based search, RabbitMQ messaging, and hexagonal architecture."
+slug: "p2p-file-sharing-network"
 date: "2024-03-01"
 published: true
 featured: true
-tags: ["go", "networking", "distributed-systems", "p2p"]
-repository: "https://github.com/DanielHernandezO/p2p-exchange"
+tags: ["go", "python", "networking", "distributed-systems", "p2p"]
+repository: "https://github.com/DanielHernandezO/p2p-DanielHernandezO-st0263"
 ---
 
 ## Overview
 
-A decentralized file sharing system that enables direct peer-to-peer transfers without relying on central servers. Built entirely in Go with a focus on performance and reliability.
+A decentralized peer-to-peer file sharing system where each node runs five microservices to enable file discovery, transfer, and synchronization without relying on a central server. Built primarily in Go with a Python-based file management service.
 
 ## Architecture
 
-The system uses a **Kademlia-based DHT** (Distributed Hash Table) for peer discovery and routing. Each node maintains a routing table of known peers, organized by XOR distance.
+The system follows a **hexagonal (ports and adapters) architecture** for all Go services. Each peer in the network runs five core microservices:
 
-```go
-type Node struct {
-    ID        NodeID
-    Address   string
-    DHT       *DistributedHashTable
-    Transport *UDPTransport
-}
-```
+| Service | Language | Responsibility |
+|---------|----------|----------------|
+| **Client** | Go | User interface for search, upload, and download operations |
+| **Search** | Go | File discovery via TCP sockets with flood-based propagation |
+| **Download** | Go | File transfer handling, consuming requests from RabbitMQ |
+| **Fetch** | Go | Periodic sync to keep peer and file availability updated |
+| **File Management** | Python | REST API for file storage and retrieval |
+
+The Go services use the **Gin framework** for HTTP handling, leveraging goroutines for concurrency and Mutex operations to prevent data race conditions during read/write operations.
 
 ## Key Features
 
-- **NAT Traversal** — Uses UDP hole punching and STUN for connectivity behind firewalls
-- **Chunked Transfers** — Large files are split into chunks for parallel downloading from multiple peers
-- **End-to-End Encryption** — All transfers encrypted using TLS 1.3
-- **Resume Support** — Interrupted transfers resume from where they left off
+- **Join** — Peers connect to the network through known existing peers, establishing themselves within the topology
+- **Post Files** — Users register available files with their peer node, making them discoverable across the network
+- **Fetch** — Maintains an updated log of available peers, eventually forming a complete graph topology
+- **Search** — Flood-based query propagation across the network with unique identifiers (including originating IP) to prevent duplicate processing and infinite loops
+- **Download** — Asynchronous file transfer using RabbitMQ to queue and process download requests between peers
+
+## Technical Details
+
+- **Message Queue:** RabbitMQ handles asynchronous download requests between Search and Download services
+- **Inter-peer Communication:** TCP sockets for search queries with flooding mechanism
+- **File Synchronization:** The Fetch service periodically updates file availability across peers
+- **Concurrency:** Gin framework goroutines + Mutex for thread safety
+- **Deployment:** Automated via shell script on Ubuntu EC2 instances with Docker-based RabbitMQ
 
 ## Lessons Learned
 
-Building a P2P system taught me the fundamental challenges of distributed systems: you can't trust the network, clocks drift, and nodes disappear without warning. The key is designing protocols that are resilient to all of these failures.
+Building this P2P system reinforced core distributed systems challenges: managing network topology without central coordination, preventing infinite loops in flood-based algorithms, and handling concurrent file operations safely. The hexagonal architecture proved valuable for isolating business logic from transport and storage concerns.

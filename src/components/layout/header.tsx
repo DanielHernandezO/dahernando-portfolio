@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { navItems } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/container";
-import { ThemeToggle } from "./theme-toggle";
 import { MobileNav } from "./mobile-nav";
 
 export function Header() {
@@ -39,12 +38,7 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
-            <div className="hidden lg:block">
-              <ThemeToggle />
-            </div>
-            <MobileNav />
-          </div>
+          <MobileNav />
         </div>
       </Container>
     </header>

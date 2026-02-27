@@ -1,20 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg-primary: #0A0E17;
-  --color-bg-secondary: #111827;
-  --color-bg-tertiary: #1E293B;
-  --color-text-primary: #F1F5F9;
-  --color-text-secondary: #94A3B8;
-  --color-accent-primary: #06D6A0;
-  --color-accent-secondary: #7C3AED;
-  --color-accent-tertiary: #F59E0B;
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-jetbrains-mono);
-}
-
-/* Light theme overrides */
-:root {
   --color-bg-primary: #FFFFFF;
   --color-bg-secondary: #F8FAFC;
   --color-bg-tertiary: #E2E8F0;
@@ -23,18 +9,8 @@
   --color-accent-primary: #059669;
   --color-accent-secondary: #6D28D9;
   --color-accent-tertiary: #D97706;
-}
-
-/* Dark theme */
-.dark {
-  --color-bg-primary: #0A0E17;
-  --color-bg-secondary: #111827;
-  --color-bg-tertiary: #1E293B;
-  --color-text-primary: #F1F5F9;
-  --color-text-secondary: #94A3B8;
-  --color-accent-primary: #06D6A0;
-  --color-accent-secondary: #7C3AED;
-  --color-accent-tertiary: #F59E0B;
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 html {
@@ -48,7 +24,7 @@ body {
 
 ::selection {
   background-color: var(--color-accent-primary);
-  color: var(--color-bg-primary);
+  color: #FFFFFF;
 }
 
 /* Scrollbar styling */

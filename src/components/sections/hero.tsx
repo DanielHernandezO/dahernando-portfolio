@@ -3,12 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { ArrowRight, FileText } from "lucide-react";
+import { ArrowRight, User } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 
 const commands = [
-  "go build -o payments ./cmd/server",
+  "go build -o service ./cmd/server",
   "kubectl apply -f deployment.yaml",
   "docker compose up -d",
   "git push origin main",
@@ -76,8 +76,8 @@ export function Hero() {
               <span className="text-accent-secondary">.</span>
             </h1>
             <p className="mb-8 max-w-lg text-lg text-text-secondary sm:text-xl">
-              I build scalable systems that move money. Currently engineering
-              payment infrastructure at{" "}
+              I transform technological impact into business impact. Building
+              scalable distributed systems at{" "}
               <span className="font-semibold text-text-primary">YUNO</span>.
             </p>
 
@@ -85,8 +85,8 @@ export function Hero() {
               <Button href="/projects" variant="primary" size="lg">
                 View Projects <ArrowRight size={18} />
               </Button>
-              <Button href="/blog" variant="outline" size="lg">
-                Read Blog <FileText size={18} />
+              <Button href="/about" variant="outline" size="lg">
+                About Me <User size={18} />
               </Button>
             </div>
           </motion.div>
