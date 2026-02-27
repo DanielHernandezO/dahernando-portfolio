@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import { Container } from "@/components/ui/container";
@@ -5,9 +7,11 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { FadeIn } from "@/components/animations/fade-in";
 import { getFeaturedProjects } from "@/lib/content";
+import { useLocale } from "@/hooks/use-locale";
 
 export function FeaturedProjects() {
   const projects = getFeaturedProjects().slice(0, 3);
+  const { t } = useLocale();
 
   if (projects.length === 0) return null;
 
@@ -18,17 +22,17 @@ export function FeaturedProjects() {
           <div className="mb-12 flex items-end justify-between">
             <div>
               <h2 className="mb-2 text-sm font-medium tracking-wider text-accent-primary">
-                PROJECTS
+                {t("projects.label")}
               </h2>
               <p className="text-2xl font-bold sm:text-3xl">
-                Featured Work
+                {t("projects.title")}
               </p>
             </div>
             <Link
               href="/projects"
               className="hidden items-center gap-1 text-sm font-medium text-accent-primary hover:underline sm:flex"
             >
-              View all <ArrowRight size={14} />
+              {t("projects.viewAll")} <ArrowRight size={14} />
             </Link>
           </div>
         </FadeIn>

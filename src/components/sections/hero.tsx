@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { ArrowRight, User } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { useLocale } from "@/hooks/use-locale";
 
 const commands = [
   "go build -o service ./cmd/server",
@@ -17,7 +18,11 @@ const commands = [
 
 function useTypingAnimation() {
   const [displayText, setDisplayText] = useState("");
-  const stateRef = useRef({ commandIndex: 0, charIndex: 0, phase: "typing" as "typing" | "pausing" | "clearing" });
+  const stateRef = useRef({
+    commandIndex: 0,
+    charIndex: 0,
+    phase: "typing" as "typing" | "pausing" | "clearing",
+  });
   const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   useEffect(() => {
@@ -55,6 +60,7 @@ function useTypingAnimation() {
 
 export function Hero() {
   const displayText = useTypingAnimation();
+  const { t } = useLocale();
 
   return (
     <section className="relative overflow-hidden py-24 sm:py-32">
@@ -68,25 +74,23 @@ export function Hero() {
             transition={{ duration: 0.6 }}
           >
             <p className="mb-4 text-sm font-medium tracking-wider text-accent-primary">
-              SOFTWARE ENGINEER
+              {t("hero.subtitle")}
             </p>
             <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-              Hi, I&apos;m{" "}
+              {t("hero.greeting")}{" "}
               <span className="text-accent-primary">Daniel</span>
               <span className="text-accent-secondary">.</span>
             </h1>
             <p className="mb-8 max-w-lg text-lg text-text-secondary sm:text-xl">
-              I transform technological impact into business impact. Building
-              scalable distributed systems at{" "}
-              <span className="font-semibold text-text-primary">YUNO</span>.
+              {t("hero.description")}
             </p>
 
             <div className="flex flex-wrap gap-4">
               <Button href="/projects" variant="primary" size="lg">
-                View Projects <ArrowRight size={18} />
+                {t("hero.viewProjects")} <ArrowRight size={18} />
               </Button>
               <Button href="/about" variant="outline" size="lg">
-                About Me <User size={18} />
+                {t("hero.aboutMe")} <User size={18} />
               </Button>
             </div>
           </motion.div>

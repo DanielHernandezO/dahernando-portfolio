@@ -1,28 +1,24 @@
-import type { Metadata } from "next";
+"use client";
+
 import { PenLine } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { PostCard } from "@/components/blog/post-card";
 import { Badge } from "@/components/ui/badge";
 import { getPublishedPosts, getAllTags } from "@/lib/content";
-
-export const metadata: Metadata = {
-  title: "Blog",
-  description:
-    "Thoughts on distributed systems, backend engineering, Go, and software architecture.",
-};
+import { useLocale } from "@/hooks/use-locale";
 
 export default function BlogPage() {
   const posts = getPublishedPosts();
   const tags = getAllTags();
+  const { t } = useLocale();
 
   return (
     <section className="py-20">
       <Container>
         <div className="mb-12">
-          <h1 className="mb-4 text-4xl font-bold">Blog</h1>
+          <h1 className="mb-4 text-4xl font-bold">{t("blog.title")}</h1>
           <p className="text-lg text-text-secondary">
-            Thoughts on distributed systems, backend engineering, and software
-            architecture.
+            {t("blog.description")}
           </p>
         </div>
 
@@ -56,13 +52,9 @@ export default function BlogPage() {
               <PenLine size={28} />
             </div>
             <h2 className="mb-3 text-xl font-semibold">
-              Articles Coming Soon
+              {t("blog.emptyTitle")}
             </h2>
-            <p className="text-text-secondary">
-              I&apos;m working on articles about distributed systems, backend
-              architecture, and lessons learned from building scalable
-              software. Stay tuned!
-            </p>
+            <p className="text-text-secondary">{t("blog.emptyDescription")}</p>
           </div>
         )}
       </Container>

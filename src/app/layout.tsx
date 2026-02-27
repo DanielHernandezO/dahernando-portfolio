@@ -3,6 +3,7 @@ import { inter, jetbrainsMono } from "@/lib/fonts";
 import { siteConfig } from "@/lib/constants";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { LocaleProvider } from "@/context/locale-context";
 import "@/styles/globals.css";
 import "@/styles/prose.css";
 
@@ -42,11 +43,13 @@ export default function RootLayout({
       className={`${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen bg-bg-primary font-sans text-text-primary antialiased">
-        <div className="flex min-h-screen flex-col">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
+        <LocaleProvider>
+          <div className="flex min-h-screen flex-col">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+        </LocaleProvider>
       </body>
     </html>
   );

@@ -13,8 +13,8 @@ export const siteConfig = {
 } as const;
 
 export const navItems = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Blog", href: "/blog" },
-  { label: "Projects", href: "/projects" },
+  { labelKey: "nav.home", href: "/" },
+  { labelKey: "nav.about", href: "/about" },
+  { labelKey: "nav.blog", href: "/blog" },
+  { labelKey: "nav.projects", href: "/projects" },
 ] as const;

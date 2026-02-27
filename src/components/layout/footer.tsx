@@ -1,6 +1,9 @@
+"use client";
+
 import { Github, Linkedin, Mail } from "lucide-react";
 import { siteConfig } from "@/lib/constants";
 import { Container } from "@/components/ui/container";
+import { useLocale } from "@/hooks/use-locale";
 
 const socialLinks = [
   {
@@ -21,13 +24,15 @@ const socialLinks = [
 ];
 
 export function Footer() {
+  const { t } = useLocale();
+
   return (
     <footer className="border-t border-bg-tertiary/50 py-12">
       <Container>
         <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
           <p className="text-sm text-text-secondary">
-            &copy; {new Date().getFullYear()} Daniel Hernandez. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Daniel Hernandez.{" "}
+            {t("footer.rights")}
           </p>
 
           <div className="flex items-center gap-4">

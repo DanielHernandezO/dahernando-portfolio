@@ -5,10 +5,13 @@ import { usePathname } from "next/navigation";
 import { navItems } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/container";
+import { LanguageToggle } from "./language-toggle";
 import { MobileNav } from "./mobile-nav";
+import { useLocale } from "@/hooks/use-locale";
 
 export function Header() {
   const pathname = usePathname();
+  const { t } = useLocale();
 
   return (
     <header className="sticky top-0 z-40 border-b border-bg-tertiary/50 bg-bg-primary/80 backdrop-blur-lg">
@@ -18,7 +21,7 @@ export function Header() {
             href="/"
             className="text-lg font-bold tracking-tight text-text-primary transition-colors hover:text-accent-primary"
           >
-            DH<span className="text-accent-primary">.</span>
+            DAHO<span className="text-accent-primary">.</span>
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex">
@@ -30,12 +33,13 @@ export function Header() {
                   "rounded-lg px-4 py-2 text-sm font-medium transition-colors",
                   pathname === item.href
                     ? "text-accent-primary"
-                    : "text-text-secondary hover:text-text-primary"
+                    : "text-text-secondary hover:text-text-primary",
                 )}
               >
-                {item.label}
+                {t(item.labelKey)}
               </Link>
             ))}
+            <LanguageToggle />
           </nav>
 
           <MobileNav />

@@ -7,10 +7,13 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { navItems } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { LanguageToggle } from "./language-toggle";
+import { useLocale } from "@/hooks/use-locale";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const { t } = useLocale();
 
   useEffect(() => {
     if (open) {
@@ -39,20 +42,23 @@ export function MobileNav() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-bg-primary backdrop-blur-md"
+            className="fixed inset-0 z-50 bg-white"
           >
             <div className="flex h-full flex-col px-6 py-6">
               <div className="flex items-center justify-between">
                 <span className="text-lg font-bold text-text-primary">
-                  DH<span className="text-accent-primary">.</span>
+                  DAHO<span className="text-accent-primary">.</span>
                 </span>
-                <button
-                  onClick={() => setOpen(false)}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg text-text-secondary hover:text-text-primary"
-                  aria-label="Close menu"
-                >
-                  <X size={22} />
-                </button>
+                <div className="flex items-center gap-2">
+                  <LanguageToggle />
+                  <button
+                    onClick={() => setOpen(false)}
+                    className="flex h-10 w-10 items-center justify-center rounded-lg text-text-secondary hover:text-text-primary"
+                    aria-label="Close menu"
+                  >
+                    <X size={22} />
+                  </button>
+                </div>
               </div>
 
               <nav className="mt-12 flex flex-1 flex-col gap-2">
@@ -70,10 +76,10 @@ export function MobileNav() {
                         "block rounded-lg px-4 py-3 text-xl font-medium transition-colors",
                         pathname === item.href
                           ? "text-accent-primary"
-                          : "text-text-secondary hover:text-text-primary"
+                          : "text-text-secondary hover:text-text-primary",
                       )}
                     >
-                      {item.label}
+                      {t(item.labelKey)}
                     </Link>
                   </motion.div>
                 ))}

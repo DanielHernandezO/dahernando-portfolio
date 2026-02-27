@@ -1,7 +1,10 @@
+"use client";
+
 import { Briefcase, GraduationCap } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 import { FadeIn } from "@/components/animations/fade-in";
+import { useLocale } from "@/hooks/use-locale";
 
 const experiences = [
   {
@@ -14,7 +17,16 @@ const experiences = [
       "Improved system reliability by implementing circuit breakers, retry policies, and distributed tracing across microservices",
       "Collaborated with product and commercial teams to translate business requirements into scalable backend solutions",
     ],
-    tags: ["Go", "Gin", "Java", "Spring Boot", "Redis", "gRPC", "Docker", "Kubernetes"],
+    tags: [
+      "Go",
+      "Gin",
+      "Java",
+      "Spring Boot",
+      "Redis",
+      "gRPC",
+      "Docker",
+      "Kubernetes",
+    ],
     highlight: true,
     icon: "briefcase" as const,
   },
@@ -49,15 +61,17 @@ const experiences = [
 ];
 
 export function ExperiencePreview() {
+  const { t } = useLocale();
+
   return (
     <section className="py-20">
       <Container>
         <FadeIn>
           <h2 className="mb-2 text-center text-sm font-medium tracking-wider text-accent-primary">
-            EXPERIENCE
+            {t("experience.label")}
           </h2>
           <p className="mb-12 text-center text-2xl font-bold sm:text-3xl">
-            Where I&apos;ve Worked
+            {t("experience.title")}
           </p>
         </FadeIn>
 
@@ -129,7 +143,7 @@ export function ExperiencePreview() {
               href="/about"
               className="text-sm font-medium text-accent-primary hover:underline"
             >
-              View full background →
+              {t("experience.viewBackground")}
             </a>
           </div>
         </FadeIn>
