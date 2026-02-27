@@ -8,17 +8,17 @@ import { useLocale } from "@/hooks/use-locale";
 
 const education = [
   {
-    degree: "Software Development Specialization",
+    degreeKey: "education.degrees.specialization",
     institution: "Universidad EAFIT",
     period: "Jul 2025 — Dec 2025",
   },
   {
-    degree: "Bachelor's degree, Computer Science",
+    degreeKey: "education.degrees.bachelors",
     institution: "Universidad EAFIT",
     period: "Jan 2020 — Dec 2024",
   },
   {
-    degree: "Associate's degree, Computer Science",
+    degreeKey: "education.degrees.associates",
     institution: "Politécnico Colombiano 'Jaime Isaza Cadavid'",
     period: "2018 — 2019",
   },
@@ -26,11 +26,11 @@ const education = [
 
 const achievements = [
   {
-    title: "Honorable Mention — South America North Finals",
+    titleKey: "education.achievements.honorable",
     description: "ICPC (International Collegiate Programming Contest)",
   },
   {
-    title: "14th place out of 41 — South America North Finals",
+    titleKey: "education.achievements.fourteenth",
     description: "ICPC (International Collegiate Programming Contest)",
   },
 ];
@@ -60,10 +60,10 @@ export function Education() {
               </div>
               <div className="space-y-4">
                 {education.map((edu) => (
-                  <Card key={edu.degree} hover={false}>
+                  <Card key={edu.degreeKey} hover={false}>
                     <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
                       <div>
-                        <h3 className="font-semibold">{edu.degree}</h3>
+                        <h3 className="font-semibold">{t(edu.degreeKey)}</h3>
                         <p className="text-sm text-text-secondary">
                           {edu.institution}
                         </p>
@@ -90,8 +90,8 @@ export function Education() {
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 {achievements.map((item) => (
-                  <Card key={item.title} hover={false}>
-                    <h3 className="font-semibold">{item.title}</h3>
+                  <Card key={item.titleKey} hover={false}>
+                    <h3 className="font-semibold">{t(item.titleKey)}</h3>
                     <p className="mt-1 text-sm text-text-secondary">
                       {item.description}
                     </p>

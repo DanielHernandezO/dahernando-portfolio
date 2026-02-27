@@ -10,42 +10,42 @@ const photos = [
   {
     src: "/images/about/traveling.jpg",
     alt: "Traveling",
-    caption: "Exploring new places",
+    captionKey: "about.photos.traveling",
   },
   {
     src: "/images/about/family.jpg",
     alt: "Family",
-    caption: "Family time",
+    captionKey: "about.photos.family",
   },
   {
     src: "/images/about/friends-1.jpg",
     alt: "Friends",
-    caption: null,
+    captionKey: null,
   },
   {
     src: "/images/about/meli-team-1.jpg",
     alt: "Mercado Libre team",
-    caption: "Team at Mercado Libre",
+    captionKey: "about.photos.meliTeam1",
   },
   {
     src: "/images/about/meli-team-2.jpg",
     alt: "Mercado Libre team",
-    caption: "Work team",
+    captionKey: "about.photos.meliTeam2",
   },
   {
     src: "/images/about/friends-2.jpg",
     alt: "Friends",
-    caption: "Good times",
+    captionKey: "about.photos.friends2",
   },
   {
     src: "/images/about/friends-3.jpg",
     alt: "Friends",
-    caption: "Adventures",
+    captionKey: "about.photos.friends3",
   },
   {
     src: "/images/about/friends-4.jpg",
     alt: "Friends",
-    caption: "Memories",
+    captionKey: "about.photos.friends4",
   },
 ];
 
@@ -103,10 +103,10 @@ export default function AboutPage() {
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     />
                   </div>
-                  {photo.caption && (
+                  {photo.captionKey && (
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                       <p className="text-sm font-medium text-white">
-                        {photo.caption}
+                        {t(photo.captionKey)}
                       </p>
                     </div>
                   )}

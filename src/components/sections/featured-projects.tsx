@@ -54,12 +54,12 @@ export function FeaturedProjects() {
                   <div className="mt-4 flex items-center gap-3 border-t border-bg-tertiary pt-4">
                     {project.repository && (
                       <span className="flex items-center gap-1 text-xs text-text-secondary">
-                        <Github size={14} /> Code
+                        <Github size={14} /> {t("projects.code")}
                       </span>
                     )}
                     {project.url && (
                       <span className="flex items-center gap-1 text-xs text-text-secondary">
-                        <ExternalLink size={14} /> Live
+                        <ExternalLink size={14} /> {t("projects.live")}
                       </span>
                     )}
                   </div>

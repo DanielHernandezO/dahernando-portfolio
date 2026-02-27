@@ -23,6 +23,15 @@ export const translations = {
       label: "EDUCATION",
       title: "Education & Achievements",
       achievementsTitle: "Achievements",
+      degrees: {
+        specialization: "Software Development Specialization",
+        bachelors: "Bachelor's degree, Computer Science",
+        associates: "Associate's degree, Computer Science",
+      },
+      achievements: {
+        honorable: "Honorable Mention — South America North Finals",
+        fourteenth: "14th place out of 41 — South America North Finals",
+      },
     },
     certifications: {
       label: "CERTIFICATIONS",
@@ -40,6 +49,14 @@ export const translations = {
       label: "PROJECTS",
       title: "Featured Work",
       viewAll: "View all",
+      code: "Code",
+      live: "Live",
+    },
+    blogHome: {
+      label: "BLOG",
+      title: "Latest Posts",
+      viewAll: "View all",
+      viewAllMobile: "View all posts →",
     },
     contact: {
       label: "CONTACT",
@@ -63,6 +80,15 @@ export const translations = {
       beyondCode: "Life Beyond Code",
       beyondCodeText:
         "When I'm not writing code, you'll find me traveling and exploring new places, spending time with my team, friends, and family. I believe the best ideas come from diverse experiences and genuine connections.",
+      photos: {
+        traveling: "Exploring new places",
+        family: "Family time",
+        meliTeam1: "Team at Mercado Libre",
+        meliTeam2: "Work team",
+        friends2: "Good times",
+        friends3: "Adventures",
+        friends4: "Memories",
+      },
     },
     footer: {
       rights: "All rights reserved.",
@@ -92,6 +118,15 @@ export const translations = {
       label: "EDUCACIÓN",
       title: "Educación y Logros",
       achievementsTitle: "Logros",
+      degrees: {
+        specialization: "Especialización en Desarrollo de Software",
+        bachelors: "Pregrado en Ingeniería de Sistemas",
+        associates: "Tecnología en Desarrollo de Software",
+      },
+      achievements: {
+        honorable: "Mención Honorífica — Finales Sudamérica Norte",
+        fourteenth: "Puesto 14 de 41 — Finales Sudamérica Norte",
+      },
     },
     certifications: {
       label: "CERTIFICACIONES",
@@ -109,6 +144,14 @@ export const translations = {
       label: "PROYECTOS",
       title: "Trabajo Destacado",
       viewAll: "Ver todo",
+      code: "Código",
+      live: "Demo",
+    },
+    blogHome: {
+      label: "BLOG",
+      title: "Últimos Artículos",
+      viewAll: "Ver todo",
+      viewAllMobile: "Ver todos los artículos →",
     },
     contact: {
       label: "CONTACTO",
@@ -132,6 +175,15 @@ export const translations = {
       beyondCode: "Vida Más Allá del Código",
       beyondCodeText:
         "Cuando no estoy escribiendo código, me encontrarás viajando y explorando nuevos lugares, pasando tiempo con mi equipo, amigos y familia. Creo que las mejores ideas surgen de experiencias diversas y conexiones genuinas.",
+      photos: {
+        traveling: "Explorando nuevos lugares",
+        family: "Tiempo en familia",
+        meliTeam1: "Equipo en Mercado Libre",
+        meliTeam2: "Equipo de trabajo",
+        friends2: "Buenos momentos",
+        friends3: "Aventuras",
+        friends4: "Recuerdos",
+      },
     },
     footer: {
       rights: "Todos los derechos reservados.",

@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
@@ -6,9 +8,11 @@ import { Badge } from "@/components/ui/badge";
 import { FadeIn } from "@/components/animations/fade-in";
 import { getPublishedPosts } from "@/lib/content";
 import { formatDate } from "@/lib/utils";
+import { useLocale } from "@/hooks/use-locale";
 
 export function FeaturedPosts() {
   const posts = getPublishedPosts().slice(0, 3);
+  const { t } = useLocale();
 
   if (posts.length === 0) return null;
 
@@ -19,15 +23,17 @@ export function FeaturedPosts() {
           <div className="mb-12 flex items-end justify-between">
             <div>
               <h2 className="mb-2 text-sm font-medium tracking-wider text-accent-primary">
-                BLOG
+                {t("blogHome.label")}
               </h2>
-              <p className="text-2xl font-bold sm:text-3xl">Latest Posts</p>
+              <p className="text-2xl font-bold sm:text-3xl">
+                {t("blogHome.title")}
+              </p>
             </div>
             <Link
               href="/blog"
               className="hidden items-center gap-1 text-sm font-medium text-accent-primary hover:underline sm:flex"
             >
-              View all <ArrowRight size={14} />
+              {t("blogHome.viewAll")} <ArrowRight size={14} />
             </Link>
           </div>
         </FadeIn>
@@ -64,7 +70,7 @@ export function FeaturedPosts() {
             href="/blog"
             className="text-sm font-medium text-accent-primary hover:underline"
           >
-            View all posts →
+            {t("blogHome.viewAllMobile")}
           </Link>
         </div>
       </Container>
