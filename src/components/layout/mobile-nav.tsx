@@ -1,14 +1,79 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import { navItems } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { LanguageToggle } from "./language-toggle";
 import { useLocale } from "@/hooks/use-locale";
+
+function MobileNavOverlay({
+  onClose,
+  pathname,
+  t,
+}: {
+  onClose: () => void;
+  pathname: string;
+  t: (key: string) => string;
+}) {
+  return createPortal(
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 9999,
+        backgroundColor: "#FFFFFF",
+      }}
+    >
+      <div className="flex h-full flex-col px-6 py-6">
+        <div className="flex items-center justify-between">
+          <span className="text-lg font-bold text-text-primary">
+            DAHO<span className="text-accent-primary">.</span>
+          </span>
+          <div className="flex items-center gap-2">
+            <LanguageToggle />
+            <button
+              onClick={onClose}
+              className="flex h-10 w-10 items-center justify-center rounded-lg text-text-secondary hover:text-text-primary"
+              aria-label="Close menu"
+            >
+              <X size={22} />
+            </button>
+          </div>
+        </div>
+
+        <nav className="mt-12 flex flex-1 flex-col gap-2">
+          {navItems.map((item, i) => (
+            <motion.div
+              key={item.href}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.1 + i * 0.05 }}
+            >
+              <Link
+                href={item.href}
+                onClick={onClose}
+                className={cn(
+                  "block rounded-lg px-4 py-3 text-xl font-medium transition-colors",
+                  pathname === item.href
+                    ? "text-accent-primary"
+                    : "text-text-secondary hover:text-text-primary",
+                )}
+              >
+                {t(item.labelKey)}
+              </Link>
+            </motion.div>
+          ))}
+        </nav>
+      </div>
+    </div>,
+    document.body,
+  );
+}
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -36,53 +101,13 @@ export function MobileNav() {
         <Menu size={22} />
       </button>
 
-      <AnimatePresence>
-        {open && (
-          <div className="fixed inset-0 z-50 bg-[#FFFFFF]">
-            <div className="flex h-full flex-col px-6 py-6">
-              <div className="flex items-center justify-between">
-                <span className="text-lg font-bold text-text-primary">
-                  DAHO<span className="text-accent-primary">.</span>
-                </span>
-                <div className="flex items-center gap-2">
-                  <LanguageToggle />
-                  <button
-                    onClick={() => setOpen(false)}
-                    className="flex h-10 w-10 items-center justify-center rounded-lg text-text-secondary hover:text-text-primary"
-                    aria-label="Close menu"
-                  >
-                    <X size={22} />
-                  </button>
-                </div>
-              </div>
-
-              <nav className="mt-12 flex flex-1 flex-col gap-2">
-                {navItems.map((item, i) => (
-                  <motion.div
-                    key={item.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 + i * 0.05 }}
-                  >
-                    <Link
-                      href={item.href}
-                      onClick={() => setOpen(false)}
-                      className={cn(
-                        "block rounded-lg px-4 py-3 text-xl font-medium transition-colors",
-                        pathname === item.href
-                          ? "text-accent-primary"
-                          : "text-text-secondary hover:text-text-primary",
-                      )}
-                    >
-                      {t(item.labelKey)}
-                    </Link>
-                  </motion.div>
-                ))}
-              </nav>
-            </div>
-          </div>
-        )}
-      </AnimatePresence>
+      {open && (
+        <MobileNavOverlay
+          onClose={() => setOpen(false)}
+          pathname={pathname}
+          t={t}
+        />
+      )}
     </div>
   );
 }
