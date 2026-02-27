@@ -9,6 +9,9 @@ import "@/styles/globals.css";
 import "@/styles/prose.css";
 
 export const metadata: Metadata = {
+  verification: {
+    google: "uHrJqhu_ocagAJAe616bAJYYG6_w0ykyr1BEUYsKacw",
+  },
   title: {
     default: siteConfig.title,
     template: `%s | ${siteConfig.name}`,
