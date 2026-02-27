@@ -7,7 +7,7 @@ export const siteConfig = {
   ogImage: "/images/og-default.png",
   links: {
     github: "https://github.com/DanielHernandezO",
-    linkedin: "https://linkedin.com/in/dahernando",
+    linkedin: "https://www.linkedin.com/in/danielhernandezoyola",
     email: "mailto:dahernandoy@gmail.com",
   },
 } as const;
