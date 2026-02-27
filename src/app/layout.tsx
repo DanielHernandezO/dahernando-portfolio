@@ -16,8 +16,11 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: [
     "Daniel Hernandez",
-    "Daniel Hernandez Software Engineer",
+    "Daniel Andres Hernandez Oyola",
     "Daniel Hernandez Oyola",
+    "Hernandez Oyola",
+    "Daniel Hernandez Software Engineer",
+    "Daniel Hernandez Colombia",
     "Software Engineer Colombia",
     "Backend Engineer",
     "Go Developer",

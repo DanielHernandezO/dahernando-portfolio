@@ -4,7 +4,8 @@ export function personJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: siteConfig.name,
+    name: "Daniel Andres Hernandez Oyola",
+    alternateName: ["Daniel Hernandez", "Daniel Hernandez Oyola"],
     url: siteConfig.url,
     jobTitle: "Software Engineer",
     description:
