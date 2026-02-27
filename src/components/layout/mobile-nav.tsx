@@ -38,12 +38,7 @@ export function MobileNav() {
 
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-white"
-          >
+          <div className="fixed inset-0 z-50 bg-[#FFFFFF]">
             <div className="flex h-full flex-col px-6 py-6">
               <div className="flex items-center justify-between">
                 <span className="text-lg font-bold text-text-primary">
@@ -85,7 +80,7 @@ export function MobileNav() {
                 ))}
               </nav>
             </div>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
     </div>

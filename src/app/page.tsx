@@ -1,7 +1,5 @@
 import { Hero } from "@/components/sections/hero";
 import { ExperiencePreview } from "@/components/sections/experience-preview";
-import { FeaturedProjects } from "@/components/sections/featured-projects";
-import { FeaturedPosts } from "@/components/sections/featured-posts";
 import { Education } from "@/components/sections/education";
 import { Certifications } from "@/components/sections/certifications";
 import { Skills } from "@/components/sections/skills";
@@ -17,8 +15,6 @@ export default function HomePage() {
       />
       <Hero />
       <ExperiencePreview />
-      <FeaturedProjects />
-      <FeaturedPosts />
       <Education />
       <Certifications />
       <Skills />
