@@ -20,20 +20,10 @@ export const translations = {
       viewBackground: "View full background →",
       yuno: {
         bullet1:
-          "Led development of the Smart Routing module, enabling dynamic payment routing across providers to optimize approval rates and reduce processing costs",
-        bullet2:
-          "Built and maintained RESTful and gRPC APIs for payment orchestration, merchant onboarding, and provider configuration management",
-        bullet3:
-          "Developed a real-time event processing pipeline using Kafka to handle high-throughput transaction events with sub-second latency",
-        bullet4:
-          "Implemented circuit breakers, retry policies, and distributed tracing to improve system resilience across microservices",
-        bullet5:
-          "Collaborated with product and commercial teams to translate complex business requirements into scalable technical solutions",
-        bullet6:
           "Led the integration of Direct Debit through Belvo, enabling large-scale recurring bank payments across LATAM. Designed resilient Go-based backend flows for mandate creation, asynchronous confirmations, reconciliation, and idempotent processing, ensuring high reliability for subscription-based revenue.",
-        bullet7:
+        bullet2:
           "Implemented Apple Pay and Google Pay for CIT and MIT flows via Braintree (PayPal), designing tokenization and vaulting strategies to support secure recurring payments while improving authorization rates and checkout conversion.",
-        bullet8:
+        bullet3:
           "Integrated Tamara via Checkout.com, enabling Buy Now, Pay Later capabilities for merchants in the MENA region. Designed secure payment orchestration and webhook handling flows in Go to ensure real-time status synchronization, transactional consistency, and improved checkout conversion rates.",
       },
       meli: {
@@ -173,20 +163,10 @@ export const translations = {
       viewBackground: "Ver experiencia completa →",
       yuno: {
         bullet1:
-          "Lideré el desarrollo del módulo de Smart Routing, permitiendo el enrutamiento dinámico de pagos entre proveedores para optimizar tasas de aprobación y reducir costos de procesamiento",
-        bullet2:
-          "Construí y mantuve APIs RESTful y gRPC para orquestación de pagos, onboarding de comercios y gestión de configuración de proveedores",
-        bullet3:
-          "Desarrollé un pipeline de procesamiento de eventos en tiempo real usando Kafka para manejar eventos de transacciones de alto volumen con latencia inferior a un segundo",
-        bullet4:
-          "Implementé circuit breakers, políticas de reintentos y trazabilidad distribuida para mejorar la resiliencia del sistema entre microservicios",
-        bullet5:
-          "Colaboré con equipos de producto y comerciales para traducir requerimientos de negocio complejos en soluciones técnicas escalables",
-        bullet6:
           "Lideré la integración de Débito Directo a través de Belvo, habilitando pagos bancarios recurrentes a gran escala en LATAM. Diseñé flujos backend resilientes en Go para creación de mandatos, confirmaciones asíncronas, reconciliación y procesamiento idempotente, asegurando alta confiabilidad para ingresos basados en suscripciones.",
-        bullet7:
+        bullet2:
           "Implementé Apple Pay y Google Pay para flujos CIT y MIT a través de Braintree (PayPal), diseñando estrategias de tokenización y almacenamiento seguro para soportar pagos recurrentes seguros, mejorando tasas de autorización y conversión en checkout.",
-        bullet8:
+        bullet3:
           "Integré Tamara a través de Checkout.com, habilitando capacidades de Compra Ahora, Paga Después para comercios en la región MENA. Diseñé flujos seguros de orquestación de pagos y manejo de webhooks en Go para asegurar sincronización de estado en tiempo real, consistencia transaccional y mejores tasas de conversión en checkout.",
       },
       meli: {
