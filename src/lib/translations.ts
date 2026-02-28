@@ -29,18 +29,32 @@ export const translations = {
           "Implemented circuit breakers, retry policies, and distributed tracing to improve system resilience across microservices",
         bullet5:
           "Collaborated with product and commercial teams to translate complex business requirements into scalable technical solutions",
+        bullet6:
+          "Led the integration of Direct Debit through Belvo, enabling large-scale recurring bank payments across LATAM. Designed resilient Go-based backend flows for mandate creation, asynchronous confirmations, reconciliation, and idempotent processing, ensuring high reliability for subscription-based revenue.",
+        bullet7:
+          "Implemented Apple Pay and Google Pay for CIT and MIT flows via Braintree (PayPal), designing tokenization and vaulting strategies to support secure recurring payments while improving authorization rates and checkout conversion.",
+        bullet8:
+          "Integrated Tamara via Checkout.com, enabling Buy Now, Pay Later capabilities for merchants in the MENA region. Designed secure payment orchestration and webhook handling flows in Go to ensure real-time status synchronization, transactional consistency, and improved checkout conversion rates.",
       },
       meli: {
-        bullet1:
-          "Reduced operational costs by millions annually through automation and optimization of backend workflows processing financial data",
-        bullet2:
-          "Designed and implemented data protection mechanisms safeguarding sensitive information for 23,000+ users across multiple services",
-        bullet3:
-          "Improved platform observability by 75% by building monitoring dashboards and alerting systems with Datadog",
-        bullet4:
-          "Built event-driven microservices handling millions of daily transactions using Kafka, Go, and PostgreSQL",
-        bullet5:
-          "Contributed to a commerce platform serving 200M+ users across Latin America, focusing on system performance, reliability, and scalability",
+        se: {
+          bullet1:
+            "Developed a feature for allowing international buyers to solve post purchase claims in an automatic way, creating a better experience for buyers and sellers. It reduced automatic returns from 1.5% to 1.2%, leading to significant cost savings for Mercado Libre. During the project, I developed a strategy for allowing buyers to execute this operation a specific amount of times according to their loyalty for avoiding fraud.",
+          bullet2:
+            "Included observability around the projects, improving the data generated in the area of automatic refunds by 75%, allowing the product team to take better decisions based on the data produced about the functionality and its use.",
+          bullet3:
+            "Implemented synchronous encryption to secure user data (protecting 23K users).",
+          bullet4:
+            "Designed a technical architecture that allows sellers to set up their own rules to resolve claims. It was created to increase the adoption of claims solved automatically by reaching around 1k users. During this design, I used UML diagrams to design system architecture and create software documentation.",
+        },
+        sd: {
+          bullet1:
+            "Developed a feature for allowing international sellers to solve post purchase claims in a straightforward way, it saved Mercado Libre around 2M USD yearly and created a better experience for sellers. During the project, I developed a new flow that takes the backend data and parses it to components that the front-end could interpret.",
+          bullet2:
+            "Created dashboards to measure and segment Mercado Libre international users for taking better and faster decisions. During the process I was in charge of creating a job to collect and clean data from the database using Mercado Libre tools, Google BigQuery and post it every day in Tableau where the dashboards are. I saved approximately 30 minutes per query execution used to analyze data previously.",
+          bullet3:
+            "Developed cart purchases in international purchases that fit in the business rules to improve the users and buyers experience. During the project I developed a GraphQL API, that allows the team to get all the information related with the purchases, using Golang.",
+        },
       },
       eafit: {
         bullet1:
@@ -168,18 +182,32 @@ export const translations = {
           "Implementé circuit breakers, políticas de reintentos y trazabilidad distribuida para mejorar la resiliencia del sistema entre microservicios",
         bullet5:
           "Colaboré con equipos de producto y comerciales para traducir requerimientos de negocio complejos en soluciones técnicas escalables",
+        bullet6:
+          "Lideré la integración de Débito Directo a través de Belvo, habilitando pagos bancarios recurrentes a gran escala en LATAM. Diseñé flujos backend resilientes en Go para creación de mandatos, confirmaciones asíncronas, reconciliación y procesamiento idempotente, asegurando alta confiabilidad para ingresos basados en suscripciones.",
+        bullet7:
+          "Implementé Apple Pay y Google Pay para flujos CIT y MIT a través de Braintree (PayPal), diseñando estrategias de tokenización y almacenamiento seguro para soportar pagos recurrentes seguros, mejorando tasas de autorización y conversión en checkout.",
+        bullet8:
+          "Integré Tamara a través de Checkout.com, habilitando capacidades de Compra Ahora, Paga Después para comercios en la región MENA. Diseñé flujos seguros de orquestación de pagos y manejo de webhooks en Go para asegurar sincronización de estado en tiempo real, consistencia transaccional y mejores tasas de conversión en checkout.",
       },
       meli: {
-        bullet1:
-          "Reduje costos operativos en millones anualmente mediante la automatización y optimización de flujos backend que procesan datos financieros",
-        bullet2:
-          "Diseñé e implementé mecanismos de protección de datos que resguardan información sensible de más de 23,000 usuarios en múltiples servicios",
-        bullet3:
-          "Mejoré la observabilidad de la plataforma en un 75% construyendo dashboards de monitoreo y sistemas de alertas con Datadog",
-        bullet4:
-          "Construí microservicios orientados a eventos que procesan millones de transacciones diarias usando Kafka, Go y PostgreSQL",
-        bullet5:
-          "Contribuí a una plataforma de comercio que atiende a más de 200M de usuarios en América Latina, enfocándome en rendimiento, confiabilidad y escalabilidad del sistema",
+        se: {
+          bullet1:
+            "Desarrollé una funcionalidad que permite a compradores internacionales resolver reclamos post-compra de forma automática, creando una mejor experiencia para compradores y vendedores. Redujo las devoluciones automáticas del 1.5% al 1.2%, generando ahorros significativos para Mercado Libre. Durante el proyecto, desarrollé una estrategia que permite a los compradores ejecutar esta operación un número específico de veces según su nivel de lealtad para evitar fraude.",
+          bullet2:
+            "Incluí observabilidad en los proyectos, mejorando los datos generados en el área de reembolsos automáticos en un 75%, permitiendo al equipo de producto tomar mejores decisiones basadas en los datos producidos sobre la funcionalidad y su uso.",
+          bullet3:
+            "Implementé cifrado sincrónico para proteger datos de usuarios (protegiendo 23K usuarios).",
+          bullet4:
+            "Diseñé una arquitectura técnica que permite a los vendedores configurar sus propias reglas para resolver reclamos. Fue creada para aumentar la adopción de reclamos resueltos automáticamente, alcanzando alrededor de 1K usuarios. Durante este diseño, utilicé diagramas UML para diseñar la arquitectura del sistema y crear documentación de software.",
+        },
+        sd: {
+          bullet1:
+            "Desarrollé una funcionalidad que permite a vendedores internacionales resolver reclamos post-compra de manera directa, ahorrando a Mercado Libre alrededor de 2M USD anuales y creando una mejor experiencia para vendedores. Durante el proyecto, desarrollé un nuevo flujo que toma los datos del backend y los transforma en componentes que el front-end puede interpretar.",
+          bullet2:
+            "Creé dashboards para medir y segmentar usuarios internacionales de Mercado Libre para tomar mejores y más rápidas decisiones. Durante el proceso, estuve a cargo de crear un job para recopilar y limpiar datos de la base de datos usando herramientas de Mercado Libre, Google BigQuery y publicarlos diariamente en Tableau donde se encuentran los dashboards. Ahorré aproximadamente 30 minutos por ejecución de consulta utilizada para analizar datos previamente.",
+          bullet3:
+            "Desarrollé compras de carrito en compras internacionales que se ajustan a las reglas de negocio para mejorar la experiencia de usuarios y compradores. Durante el proyecto, desarrollé una API GraphQL que permite al equipo obtener toda la información relacionada con las compras, usando Golang.",
+        },
       },
       eafit: {
         bullet1:

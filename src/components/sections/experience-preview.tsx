@@ -9,13 +9,21 @@ import { useLocale } from "@/hooks/use-locale";
 const experiences = [
   {
     company: "YUNO",
-    roles: [{ title: "Backend Engineer", period: "Nov 2025 — Present" }],
-    bulletKeys: [
-      "experience.yuno.bullet1",
-      "experience.yuno.bullet2",
-      "experience.yuno.bullet3",
-      "experience.yuno.bullet4",
-      "experience.yuno.bullet5",
+    roles: [
+      {
+        title: "Software Engineer",
+        period: "Nov 2025 — Present",
+        bulletKeys: [
+          "experience.yuno.bullet1",
+          "experience.yuno.bullet2",
+          "experience.yuno.bullet3",
+          "experience.yuno.bullet4",
+          "experience.yuno.bullet5",
+          "experience.yuno.bullet6",
+          "experience.yuno.bullet7",
+          "experience.yuno.bullet8",
+        ],
+      },
     ],
     tags: [
       "Go",
@@ -33,15 +41,25 @@ const experiences = [
   {
     company: "Mercado Libre",
     roles: [
-      { title: "Software Engineer", period: "Jan 2023 — Nov 2025" },
-      { title: "Software Developer", period: "Jan 2022 — Jan 2023" },
-    ],
-    bulletKeys: [
-      "experience.meli.bullet1",
-      "experience.meli.bullet2",
-      "experience.meli.bullet3",
-      "experience.meli.bullet4",
-      "experience.meli.bullet5",
+      {
+        title: "Software Engineer",
+        period: "Jan 2023 — Nov 2025",
+        bulletKeys: [
+          "experience.meli.se.bullet1",
+          "experience.meli.se.bullet2",
+          "experience.meli.se.bullet3",
+          "experience.meli.se.bullet4",
+        ],
+      },
+      {
+        title: "Software Developer",
+        period: "Jan 2022 — Jan 2023",
+        bulletKeys: [
+          "experience.meli.sd.bullet1",
+          "experience.meli.sd.bullet2",
+          "experience.meli.sd.bullet3",
+        ],
+      },
     ],
     tags: ["Go", "Java", "Kafka", "PostgreSQL", "Datadog", "Docker", "AWS"],
     highlight: false,
@@ -49,10 +67,15 @@ const experiences = [
   },
   {
     company: "Universidad EAFIT",
-    roles: [{ title: "Teacher Assistant", period: "Jun 2021 — Dec 2021" }],
-    bulletKeys: [
-      "experience.eafit.bullet1",
-      "experience.eafit.bullet2",
+    roles: [
+      {
+        title: "Teacher Assistant",
+        period: "Jun 2021 — Dec 2021",
+        bulletKeys: [
+          "experience.eafit.bullet1",
+          "experience.eafit.bullet2",
+        ],
+      },
     ],
     tags: [],
     highlight: false,
@@ -101,29 +124,28 @@ export function ExperiencePreview() {
                 <div className="flex-1 pb-2">
                   <h3 className="text-lg font-semibold">{exp.company}</h3>
                   {exp.roles.map((role) => (
-                    <div
-                      key={role.title}
-                      className="mt-1 flex flex-wrap items-baseline gap-x-3 gap-y-0.5"
-                    >
-                      <span className="text-sm font-medium text-text-primary">
-                        {role.title}
-                      </span>
-                      <span className="text-sm text-accent-primary">
-                        {role.period}
-                      </span>
+                    <div key={role.title} className="mt-1">
+                      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
+                        <span className="text-sm font-medium text-text-primary">
+                          {role.title}
+                        </span>
+                        <span className="text-sm text-accent-primary">
+                          {role.period}
+                        </span>
+                      </div>
+                      <ul className="mt-3 mb-4 space-y-1.5 last:mb-0">
+                        {role.bulletKeys.map((key) => (
+                          <li
+                            key={key}
+                            className="text-sm leading-relaxed text-text-secondary"
+                          >
+                            <span className="mr-2 text-accent-primary">•</span>
+                            {t(key)}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   ))}
-                  <ul className="mt-3 space-y-1.5">
-                    {exp.bulletKeys.map((key) => (
-                      <li
-                        key={key}
-                        className="text-sm leading-relaxed text-text-secondary"
-                      >
-                        <span className="mr-2 text-accent-primary">•</span>
-                        {t(key)}
-                      </li>
-                    ))}
-                  </ul>
                   {exp.tags.length > 0 && (
                     <div className="mt-4 flex flex-wrap gap-2">
                       {exp.tags.map((tag) => (
