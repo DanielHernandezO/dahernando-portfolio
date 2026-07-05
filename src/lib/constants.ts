@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Daniel Hernandez",
-  title: "Daniel Hernandez - Software Engineer",
+  title: "Daniel Hernández · Backend & Payments Engineer",
   description:
-    "Software Engineer combining deep technical expertise with a strong business mindset. I translate complex requirements into scalable solutions that drive performance and profitability.",
+    "Backend software engineer specialized in distributed systems and payments. I build products, architecture, and custom software companies rely on. Yuno · ex-Mercado Libre.",
   url: "https://danielhernandezo.com",
   ogImage: "/images/og-default.png",
   links: {
@@ -13,8 +13,8 @@ export const siteConfig = {
 } as const;
 
 export const navItems = [
-  { labelKey: "nav.home", href: "/" },
+  { labelKey: "nav.services", href: "/#services" },
+  { labelKey: "nav.work", href: "/#work" },
   { labelKey: "nav.about", href: "/about" },
   { labelKey: "nav.blog", href: "/blog" },
-  { labelKey: "nav.projects", href: "/projects" },
 ] as const;

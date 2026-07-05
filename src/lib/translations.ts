@@ -5,14 +5,75 @@ export const translations = {
       about: "About",
       blog: "Blog",
       projects: "Projects",
+      services: "Services",
+      work: "Work",
+      cta: "Start a project",
     },
     hero: {
-      subtitle: "SOFTWARE ENGINEER",
-      greeting: "Hi, I'm",
+      subtitle: "BACKEND · PAYMENTS · CUSTOM SOFTWARE",
+      headlineTop: "Backend systems that move money,",
+      headlineBottom: "scale, and don't break.",
       description:
-        "Software Engineer focused on building scalable backend systems that create measurable business impact. I've worked at Mercado Libre and Yuno, designing high-performance payment and commerce solutions that reduced operational costs, improved conversion rates, and supported thousands of users across international markets.",
-      viewProjects: "View Projects",
-      aboutMe: "About Me",
+        "Payments infrastructure at Yuno. Distributed systems at scale at Mercado Libre. Now engineering products, architecture, and custom software for companies that need it to just work.",
+      ctaPrimary: "Start a project",
+      ctaSecondary: "See the work",
+      trust: "Trusted background",
+    },
+    services: {
+      label: "SERVICES",
+      title: "What I can build for you",
+      cta: "Discuss your project",
+      product: {
+        name: "Product Engineering",
+        headline: "Ship real products, not prototypes.",
+        description:
+          "Production-grade backend, APIs, and the infrastructure underneath, engineered to scale from your first user to your millionth without a rewrite.",
+        who: "Founders · startups",
+      },
+      consulting: {
+        name: "Architecture & Consulting",
+        headline: "Get the decision right once.",
+        description:
+          "System and architecture reviews from someone who has operated payments and distributed systems at scale. Design, stress-test, and de-risk before you build.",
+        who: "CTOs · engineering teams",
+      },
+      systems: {
+        name: "Custom Business Systems",
+        headline: "Software built around your operation.",
+        description:
+          "Tailored platforms designed around how your business actually works: the system your company runs on. Built to be owned, not rented.",
+        who: "SMEs · companies",
+      },
+    },
+    work: {
+      label: "CLIENT WORK",
+      title: "Proof, not promises.",
+      cta: "Let's build yours",
+      readCase: "Talk about your system",
+      backing:
+        "The standard behind it comes from years shipping systems at scale.",
+      backingLink: "See my experience →",
+      reconstructora: {
+        client: "Reconstructora Medellín",
+        type: "DAHO. Systems · Engine reconstruction",
+        summary:
+          "An engine-reconstruction workshop run on spreadsheets, paper, and WhatsApp. We designed and built its information system from scratch: inventory, payroll, and day-to-day operations. One platform built around how the shop actually works, with accounting integration (Siigo) on the roadmap.",
+        m1label: "Single source of truth",
+        m2label: "Inventory · payroll · operations",
+        m3label: "Manual work automated",
+      },
+      meli: {
+        client: "Mercado Libre",
+        type: "Payments · Distributed systems at scale",
+        summary:
+          "Backend systems at the largest technology company in Latin America: automatic claim resolution that cut returns and saved cost, encryption protecting 23K users, and observability that lifted decision data by 75%.",
+      },
+      yuno: {
+        client: "Yuno",
+        type: "Payments infrastructure",
+        summary:
+          "Payment integrations where a dropped transaction is lost revenue: Apple Pay, Google Pay, Direct Debit via Belvo, and Tamara, behind clean, resilient Go services.",
+      },
     },
     experience: {
       label: "EXPERIENCE",
@@ -63,8 +124,8 @@ export const translations = {
         associates: "Associate's degree, Computer Science",
       },
       achievements: {
-        honorable: "Honorable Mention — South America North Finals",
-        fourteenth: "14th place out of 41 — South America North Finals",
+        honorable: "Honorable Mention, South America North Finals",
+        fourteenth: "14th place out of 41, South America North Finals",
       },
     },
     certifications: {
@@ -108,10 +169,10 @@ export const translations = {
     },
     contact: {
       label: "CONTACT",
-      title: "Let's Work Together",
+      title: "Have a system worth building?",
       description:
-        "I'm always interested in hearing about new opportunities, interesting projects, and ways to push the boundaries of distributed systems.",
-      cta: "Get in Touch",
+        "Tell me the problem you're solving. Whether it's payments, architecture, or a custom system your business runs on, let's talk. Usually reply within 24 hours.",
+      cta: "Get in touch",
     },
     blog: {
       title: "Blog",
@@ -124,7 +185,7 @@ export const translations = {
     about: {
       title: "About Me",
       introText:
-        "I'm Daniel, a Software Engineer based in Colombia, combining deep technical expertise with a strong business mindset. I thrive in cross-functional teams where clear communication and collaboration drive results. Whether it's leading technical initiatives, mentoring teammates, or translating complex requirements into scalable solutions — I believe the best software is built by people who understand both the technology and the problem it solves.",
+        "I'm Daniel, a Software Engineer based in Colombia, combining deep technical expertise with a strong business mindset. I thrive in cross-functional teams where clear communication and collaboration drive results. Whether it's leading technical initiatives, mentoring teammates, or translating complex requirements into scalable solutions, I believe the best software is built by people who understand both the technology and the problem it solves.",
       beyondCode: "Life Beyond Code",
       beyondCodeText:
         "When I'm not writing code, you'll find me spending time with my family, traveling and exploring new places, and enjoying moments with friends and teammates. I believe the best ideas come from diverse experiences and genuine connections.",
@@ -148,14 +209,75 @@ export const translations = {
       about: "Sobre mí",
       blog: "Blog",
       projects: "Proyectos",
+      services: "Servicios",
+      work: "Casos",
+      cta: "Iniciar proyecto",
     },
     hero: {
-      subtitle: "INGENIERO DE SOFTWARE",
-      greeting: "Hola, soy",
+      subtitle: "BACKEND · PAGOS · SOFTWARE A MEDIDA",
+      headlineTop: "Sistemas backend que mueven dinero,",
+      headlineBottom: "escalan y no se caen.",
       description:
-        "Ingeniero de Software enfocado en construir sistemas backend escalables que generan impacto medible en el negocio. He trabajado en Mercado Libre y Yuno, diseñando soluciones de alto rendimiento para pagos y comercio que redujeron costos operativos, mejoraron tasas de conversión y dieron soporte a miles de usuarios en mercados internacionales.",
-      viewProjects: "Ver Proyectos",
-      aboutMe: "Sobre Mí",
+        "Infraestructura de pagos en Yuno. Sistemas distribuidos a escala en Mercado Libre. Hoy construyo productos, arquitectura y software a medida para empresas que necesitan que simplemente funcione.",
+      ctaPrimary: "Iniciar un proyecto",
+      ctaSecondary: "Ver el trabajo",
+      trust: "Trayectoria",
+    },
+    services: {
+      label: "SERVICIOS",
+      title: "Lo que puedo construir para ti",
+      cta: "Hablemos de tu proyecto",
+      product: {
+        name: "Ingeniería de Producto",
+        headline: "Productos reales, no prototipos.",
+        description:
+          "Backend, APIs e infraestructura de grado producción, diseñados para escalar desde tu primer usuario hasta el millón sin reescribir.",
+        who: "Founders · startups",
+      },
+      consulting: {
+        name: "Arquitectura y Consultoría",
+        headline: "Acierta la decisión una sola vez.",
+        description:
+          "Revisión y diseño de arquitectura por quien ha operado pagos y sistemas distribuidos a escala. Diseña, prueba bajo carga y reduce el riesgo antes de construir.",
+        who: "CTOs · equipos de ingeniería",
+      },
+      systems: {
+        name: "Sistemas a Medida",
+        headline: "Software construido alrededor de tu operación.",
+        description:
+          "Plataformas hechas a la medida de cómo funciona tu negocio de verdad: el sistema sobre el que corre tu empresa. Construido para poseer, no para alquilar.",
+        who: "PYMEs · empresas",
+      },
+    },
+    work: {
+      label: "TRABAJO CON CLIENTES",
+      title: "Pruebas, no promesas.",
+      cta: "Construyamos el tuyo",
+      readCase: "Hablemos de tu sistema",
+      backing:
+        "El estándar detrás viene de años construyendo sistemas a escala.",
+      backingLink: "Mira mi experiencia →",
+      reconstructora: {
+        client: "Reconstructora Medellín",
+        type: "DAHO. Systems · Reconstrucción de motores",
+        summary:
+          "Una rectificadora de motores operada en hojas de cálculo, papel y WhatsApp. Diseñamos y construimos su sistema de información desde cero: inventario, nómina y operación diaria. Una sola plataforma alrededor de cómo trabaja el taller de verdad, con integración contable (Siigo) en el roadmap.",
+        m1label: "Única fuente de verdad",
+        m2label: "Inventario · nómina · operación",
+        m3label: "Trabajo manual automatizado",
+      },
+      meli: {
+        client: "Mercado Libre",
+        type: "Pagos · Sistemas distribuidos a escala",
+        summary:
+          "Sistemas backend en la mayor empresa de tecnología de Latinoamérica: resolución automática de reclamos que redujo devoluciones y costos, cifrado que protege 23K usuarios y observabilidad que mejoró los datos de decisión en 75%.",
+      },
+      yuno: {
+        client: "Yuno",
+        type: "Infraestructura de pagos",
+        summary:
+          "Integraciones de pago donde una transacción perdida es ingreso perdido: Apple Pay, Google Pay, Débito Directo vía Belvo y Tamara, tras servicios en Go limpios y resilientes.",
+      },
     },
     experience: {
       label: "EXPERIENCIA",
@@ -206,8 +328,8 @@ export const translations = {
         associates: "Tecnología en Desarrollo de Software",
       },
       achievements: {
-        honorable: "Mención Honorífica — Finales Sudamérica Norte",
-        fourteenth: "Puesto 14 de 41 — Finales Sudamérica Norte",
+        honorable: "Mención Honorífica, Finales Sudamérica Norte",
+        fourteenth: "Puesto 14 de 41, Finales Sudamérica Norte",
       },
     },
     certifications: {
@@ -251,10 +373,10 @@ export const translations = {
     },
     contact: {
       label: "CONTACTO",
-      title: "Trabajemos Juntos",
+      title: "¿Tienes un sistema que vale la pena construir?",
       description:
-        "Siempre estoy interesado en conocer nuevas oportunidades, proyectos interesantes y formas de llevar los sistemas distribuidos al siguiente nivel.",
-      cta: "Contáctame",
+        "Cuéntame el problema que quieres resolver. Ya sea pagos, arquitectura o un sistema a medida sobre el que corre tu negocio, hablemos. Suelo responder en menos de 24 horas.",
+      cta: "Hablemos",
     },
     blog: {
       title: "Blog",
@@ -267,7 +389,7 @@ export const translations = {
     about: {
       title: "Sobre Mí",
       introText:
-        "Soy Daniel, un Ingeniero de Software en Colombia, combinando experiencia técnica profunda con una fuerte mentalidad de negocio. Destaco en equipos multifuncionales donde la comunicación clara y la colaboración impulsan resultados. Ya sea liderando iniciativas técnicas, mentoreando compañeros o traduciendo requerimientos complejos en soluciones escalables — creo que el mejor software lo construyen personas que entienden tanto la tecnología como el problema que resuelve.",
+        "Soy Daniel, un Ingeniero de Software en Colombia, combinando experiencia técnica profunda con una fuerte mentalidad de negocio. Destaco en equipos multifuncionales donde la comunicación clara y la colaboración impulsan resultados. Ya sea liderando iniciativas técnicas, mentoreando compañeros o traduciendo requerimientos complejos en soluciones escalables, creo que el mejor software lo construyen personas que entienden tanto la tecnología como el problema que resuelve.",
       beyondCode: "Vida Más Allá del Código",
       beyondCodeText:
         "Cuando no estoy escribiendo código, me encontrarás pasando tiempo con mi familia, viajando y explorando nuevos lugares, y disfrutando momentos con amigos y compañeros. Creo que las mejores ideas surgen de experiencias diversas y conexiones genuinas.",

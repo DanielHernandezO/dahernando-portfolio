@@ -1,16 +1,37 @@
 @import "tailwindcss";
 
+/* ============================================================
+   DAHO. — Brand design system
+   Iris & Coral sobre tinta violeta. Dark-first.
+   Token names kept stable so existing components adopt the theme.
+   ============================================================ */
 @theme {
-  --color-bg-primary: #FFFFFF;
-  --color-bg-secondary: #F8FAFC;
-  --color-bg-tertiary: #E2E8F0;
-  --color-text-primary: #0F172A;
-  --color-text-secondary: #475569;
-  --color-accent-primary: #059669;
-  --color-accent-secondary: #6D28D9;
-  --color-accent-tertiary: #D97706;
+  /* Surfaces */
+  --color-bg-primary: #0F0D18;    /* Tinta — fondo base (violeta-negro) */
+  --color-bg-secondary: #191527;  /* Superficie elevada */
+  --color-bg-tertiary: #2B2540;   /* Borde / divisor */
+
+  /* Text */
+  --color-text-primary: #F4F2FC;  /* Niebla — casi blanco cálido */
+  --color-text-secondary: #A6A0BE;/* Secundario */
+  --color-text-tertiary: #6E6890; /* Tenue — captions/meta */
+
+  /* Accent — Iris & Coral */
+  --color-accent-primary: #9A8CFF;   /* Iris (sobre oscuro) ~8:1 */
+  --color-accent-secondary: #FF8A6B; /* Coral — contra-acento cálido */
+  --color-accent-tertiary: #5BE3B4;  /* Menta — highlight raro */
+
+  /* State */
+  --color-success: #5BE3B4;
+  --color-warning: #FFB86B;
+  --color-danger: #FF6B81;
+
+  /* Typography */
+  --font-display: var(--font-space-grotesk);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
+
+  --radius: 0.75rem;
 }
 
 html {
@@ -22,25 +43,75 @@ body {
   color: var(--color-text-primary);
 }
 
+/* Headings carry the display face (Space Grotesk) */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
 ::selection {
   background-color: var(--color-accent-primary);
-  color: #FFFFFF;
+  color: #0F0D18;
 }
 
-/* Scrollbar styling */
+/* Scrollbar — dark */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
-
 ::-webkit-scrollbar-track {
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-primary);
 }
-
 ::-webkit-scrollbar-thumb {
   background: var(--color-bg-tertiary);
-  border-radius: 4px;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-text-secondary);
+/* ---- Brand utilities ---- */
+
+/* Blueprint dot-grid background for hero / section atmospheres */
+.brand-grid {
+  background-image: radial-gradient(circle, rgba(64, 56, 96, 0.55) 1px, transparent 1px);
+  background-size: 34px 34px;
+  -webkit-mask-image: radial-gradient(120% 90% at 60% 0%, #000 30%, transparent 78%);
+  mask-image: radial-gradient(120% 90% at 60% 0%, #000 30%, transparent 78%);
+}
+
+/* Iris glow accent used behind hero headline / focal points */
+.brand-glow {
+  background: radial-gradient(circle, rgba(123, 108, 246, 0.18) 0%, rgba(123, 108, 246, 0.04) 35%, transparent 62%);
+}
+
+/* Iris → Coral signature gradient for display accents */
+.brand-gradient-text {
+  background-image: linear-gradient(100deg, #7B6CF6, #C56BF5 52%, #FF8A6B);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Terminal-style mono overline */
+.brand-overline {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+}
+
+/* Slow, ambient rotation for the Apertura isotype in the hero */
+@keyframes daho-spin {
+  to { transform: rotate(360deg); }
+}
+.daho-spin {
+  transform-origin: 50% 50%;
+  animation: daho-spin 44s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .daho-spin { animation: none; }
 }

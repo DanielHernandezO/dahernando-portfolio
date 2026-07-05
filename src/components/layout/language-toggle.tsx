@@ -13,7 +13,7 @@ export function LanguageToggle() {
         className={cn(
           "px-2.5 py-1 transition-colors",
           locale === "en"
-            ? "bg-accent-primary text-white"
+            ? "bg-accent-primary text-bg-primary"
             : "text-text-secondary hover:text-text-primary",
         )}
         aria-label="English"
@@ -25,7 +25,7 @@ export function LanguageToggle() {
         className={cn(
           "px-2.5 py-1 transition-colors",
           locale === "es"
-            ? "bg-accent-primary text-white"
+            ? "bg-accent-primary text-bg-primary"
             : "text-text-secondary hover:text-text-primary",
         )}
         aria-label="Español"

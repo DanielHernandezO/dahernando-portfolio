@@ -18,23 +18,23 @@ const projectContentEs: Record<string, ReactNode> = {
       </p>
       <ul>
         <li>
-          <strong>Controllers</strong> — 4 controladores REST manejando
+          <strong>Controllers</strong>: 4 controladores REST manejando
           peticiones HTTP para concursos, problemas, usuarios y envíos
         </li>
         <li>
-          <strong>Services</strong> — Capa de lógica de negocio implementando
+          <strong>Services</strong>: Capa de lógica de negocio implementando
           validación y orquestación
         </li>
         <li>
-          <strong>Repositories</strong> — Capa de acceso a datos usando Spring
+          <strong>Repositories</strong>: Capa de acceso a datos usando Spring
           Data JPA
         </li>
         <li>
-          <strong>DTOs</strong> — Objetos de Transferencia de Datos con
+          <strong>DTOs</strong>: Objetos de Transferencia de Datos con
           ModelMapper para conversión entidad-DTO
         </li>
         <li>
-          <strong>Models</strong> — 10 modelos de entidad JPA representando el
+          <strong>Models</strong>: 10 modelos de entidad JPA representando el
           dominio
         </li>
       </ul>
@@ -67,23 +67,23 @@ const projectContentEs: Record<string, ReactNode> = {
       <h2>Características Principales</h2>
       <ul>
         <li>
-          <strong>Gestión de Concursos</strong> — Crear, leer, actualizar y
+          <strong>Gestión de Concursos</strong>: Crear, leer, actualizar y
           eliminar concursos de programación con metadatos
         </li>
         <li>
-          <strong>Banco de Problemas</strong> — Gestionar problemas algorítmicos
+          <strong>Banco de Problemas</strong>: Gestionar problemas algorítmicos
           con descripciones, niveles de dificultad y categorías
         </li>
         <li>
-          <strong>Perfiles de Usuario</strong> — Registro y gestión de usuarios
+          <strong>Perfiles de Usuario</strong>: Registro y gestión de usuarios
           con seguimiento de envíos
         </li>
         <li>
-          <strong>Envíos</strong> — Rastrear soluciones de usuarios con
+          <strong>Envíos</strong>: Rastrear soluciones de usuarios con
           veredicto, tiempo de ejecución y uso de memoria
         </li>
         <li>
-          <strong>Diseño RESTful</strong> — API limpia siguiendo convenciones
+          <strong>Diseño RESTful</strong>: API limpia siguiendo convenciones
           REST con códigos de estado HTTP apropiados
         </li>
       </ul>
@@ -183,24 +183,24 @@ const projectContentEs: Record<string, ReactNode> = {
       <h2>Características Principales</h2>
       <ul>
         <li>
-          <strong>Join</strong> — Los peers se conectan a la red a través de
+          <strong>Join</strong>: Los peers se conectan a la red a través de
           peers conocidos, estableciéndose dentro de la topología
         </li>
         <li>
-          <strong>Post Files</strong> — Los usuarios registran archivos
+          <strong>Post Files</strong>: Los usuarios registran archivos
           disponibles con su nodo peer, haciéndolos descubribles en toda la red
         </li>
         <li>
-          <strong>Fetch</strong> — Mantiene un registro actualizado de peers
+          <strong>Fetch</strong>: Mantiene un registro actualizado de peers
           disponibles, formando eventualmente una topología de grafo completo
         </li>
         <li>
-          <strong>Search</strong> — Propagación de consultas por inundación a
+          <strong>Search</strong>: Propagación de consultas por inundación a
           través de la red con identificadores únicos (incluyendo IP de origen)
           para prevenir procesamiento duplicado y bucles infinitos
         </li>
         <li>
-          <strong>Download</strong> — Transferencia asíncrona de archivos usando
+          <strong>Download</strong>: Transferencia asíncrona de archivos usando
           RabbitMQ para encolar y procesar solicitudes de descarga entre peers
         </li>
       </ul>

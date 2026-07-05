@@ -3,6 +3,7 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { siteConfig } from "@/lib/constants";
 import { Container } from "@/components/ui/container";
+import { BrandMark } from "@/components/ui/brand-mark";
 import { useLocale } from "@/hooks/use-locale";
 
 const socialLinks = [
@@ -30,10 +31,13 @@ export function Footer() {
     <footer className="border-t border-bg-tertiary/50 py-12">
       <Container>
         <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
-          <p className="text-sm text-text-secondary">
-            &copy; {new Date().getFullYear()} Daniel Hernandez.{" "}
-            {t("footer.rights")}
-          </p>
+          <div className="flex items-center gap-3">
+            <BrandMark size={22} />
+            <p className="text-sm text-text-secondary">
+              &copy; {new Date().getFullYear()} Daniel Hernandez.{" "}
+              {t("footer.rights")}
+            </p>
+          </div>
 
           <div className="flex items-center gap-4">
             {socialLinks.map((link) => (

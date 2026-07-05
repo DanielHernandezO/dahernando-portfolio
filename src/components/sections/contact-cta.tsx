@@ -11,7 +11,7 @@ export function ContactCTA() {
   const { t } = useLocale();
 
   return (
-    <section className="border-t border-bg-tertiary/50 py-24">
+    <section id="contact" className="border-t border-bg-tertiary/50 py-24">
       <Container>
         <FadeIn>
           <div className="mx-auto max-w-2xl text-center">

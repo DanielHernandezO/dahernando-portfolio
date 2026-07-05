@@ -1,129 +1,76 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { motion } from "motion/react";
-import { ArrowRight, User } from "lucide-react";
+import { ArrowRight, ArrowDown } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { BrandMark } from "@/components/ui/brand-mark";
 import { useLocale } from "@/hooks/use-locale";
 
-const commands = [
-  "go build -o service ./cmd/server",
-  "kubectl apply -f deployment.yaml",
-  "docker compose up -d",
-  "git push origin main",
-  "make test-integration",
-];
-
-function useTypingAnimation() {
-  const [displayText, setDisplayText] = useState("");
-  const stateRef = useRef({
-    commandIndex: 0,
-    charIndex: 0,
-    phase: "typing" as "typing" | "pausing" | "clearing",
-  });
-  const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
-
-  useEffect(() => {
-    function step() {
-      const { commandIndex, charIndex, phase } = stateRef.current;
-      const command = commands[commandIndex];
-
-      if (phase === "typing") {
-        if (charIndex < command.length) {
-          const nextChar = charIndex + 1;
-          stateRef.current.charIndex = nextChar;
-          setDisplayText(command.slice(0, nextChar));
-          timerRef.current = setTimeout(step, 50);
-        } else {
-          stateRef.current.phase = "pausing";
-          timerRef.current = setTimeout(step, 2000);
-        }
-      } else if (phase === "pausing") {
-        stateRef.current = {
-          commandIndex: (commandIndex + 1) % commands.length,
-          charIndex: 0,
-          phase: "typing",
-        };
-        setDisplayText("");
-        timerRef.current = setTimeout(step, 100);
-      }
-    }
-
-    step();
-    return () => clearTimeout(timerRef.current);
-  }, []);
-
-  return displayText;
-}
-
 export function Hero() {
-  const displayText = useTypingAnimation();
   const { t } = useLocale();
 
   return (
-    <section className="relative overflow-hidden py-24 sm:py-32">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--color-accent-primary)_0%,_transparent_50%)] opacity-[0.07]" />
+    <section className="relative overflow-hidden py-24 sm:py-32 lg:py-40">
+      <div className="pointer-events-none absolute inset-0 brand-grid" />
+      <div className="pointer-events-none absolute -top-24 right-0 h-[620px] w-[620px] brand-glow" />
 
-      <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+      <Container className="relative">
+        <div className="grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="mb-4 text-sm font-medium tracking-wider text-accent-primary">
-              {t("hero.subtitle")}
-            </p>
-            <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-              {t("hero.greeting")}{" "}
-              <span className="text-accent-primary">Daniel</span>
-              <span className="text-accent-secondary">.</span>
+            <p className="brand-overline mb-6">{t("hero.subtitle")}</p>
+
+            <h1 className="text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-[3.75rem]">
+              <span className="text-text-primary">{t("hero.headlineTop")}</span>{" "}
+              <span className="text-accent-primary">{t("hero.headlineBottom")}</span>
             </h1>
-            <p className="mb-8 max-w-lg text-lg text-text-secondary sm:text-xl">
+
+            <p className="mt-8 max-w-xl text-lg text-text-secondary">
               {t("hero.description")}
             </p>
 
-            <div className="flex flex-wrap gap-4">
-              <Button href="/projects" variant="primary" size="lg">
-                {t("hero.viewProjects")} <ArrowRight size={18} />
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Button href="#contact" variant="primary" size="lg">
+                {t("hero.ctaPrimary")} <ArrowRight size={18} />
               </Button>
-              <Button href="/about" variant="outline" size="lg">
-                {t("hero.aboutMe")} <User size={18} />
+              <Button href="#work" variant="outline" size="lg">
+                {t("hero.ctaSecondary")} <ArrowDown size={18} />
               </Button>
+            </div>
+
+            <div className="mt-12 border-t border-bg-tertiary pt-6">
+              <p className="mb-3 font-mono text-xs uppercase tracking-[0.14em] text-text-tertiary">
+                {t("hero.trust")}
+              </p>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-sm text-text-secondary">
+                <span>Mercado Libre</span>
+                <span className="text-bg-tertiary">/</span>
+                <span>Yuno</span>
+                <span className="text-bg-tertiary">/</span>
+                <span>ICPC South America North Finals</span>
+              </div>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col items-center gap-8"
+            className="hidden lg:block"
           >
-            <div className="relative h-48 w-48 overflow-hidden rounded-full border-2 border-accent-primary/30 sm:h-56 sm:w-56">
-              <Image
-                src="/images/profile.jpg"
-                alt="Daniel Hernandez"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-
-            <div className="w-full max-w-md overflow-hidden rounded-xl border border-bg-tertiary bg-bg-secondary">
-              <div className="flex items-center gap-2 border-b border-bg-tertiary px-4 py-3">
-                <div className="h-3 w-3 rounded-full bg-red-500/80" />
-                <div className="h-3 w-3 rounded-full bg-yellow-500/80" />
-                <div className="h-3 w-3 rounded-full bg-green-500/80" />
-                <span className="ml-2 text-xs text-text-secondary">
-                  terminal
-                </span>
+            <div className="relative mx-auto flex aspect-square max-w-[380px] items-center justify-center">
+              <div className="pointer-events-none absolute inset-[6%] rounded-full brand-glow" />
+              <div className="daho-spin">
+                <BrandMark size={300} />
               </div>
-              <div className="p-4 font-mono text-sm">
-                <span className="text-accent-primary">$</span>{" "}
-                <span className="text-text-primary">{displayText}</span>
-                <span className="animate-pulse text-accent-primary">▌</span>
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-bg-tertiary bg-bg-secondary px-4 py-2 font-mono text-xs text-text-tertiary shadow-lg shadow-black/30">
+                <span className="text-text-secondary">$ status:</span>{" "}
+                <span className="text-accent-tertiary">healthy</span> · uptime
+                99.98%
               </div>
             </div>
           </motion.div>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { inter, jetbrainsMono } from "@/lib/fonts";
+import { inter, jetbrainsMono, spaceGrotesk } from "@/lib/fonts";
 import { siteConfig } from "@/lib/constants";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -73,7 +73,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable}`}
     >
       <body className="min-h-screen bg-bg-primary font-sans text-text-primary antialiased">
         <script
