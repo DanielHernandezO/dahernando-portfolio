@@ -1,8 +1,9 @@
 import { Hero } from "@/components/sections/hero";
+import { Services } from "@/components/sections/services";
+import { Work } from "@/components/sections/work";
 import { ExperiencePreview } from "@/components/sections/experience-preview";
-import { Education } from "@/components/sections/education";
-import { Certifications } from "@/components/sections/certifications";
 import { Skills } from "@/components/sections/skills";
+import { Education } from "@/components/sections/education";
 import { ContactCTA } from "@/components/sections/contact-cta";
 import { personJsonLd } from "@/lib/structured-data";
 
@@ -14,10 +15,11 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd()) }}
       />
       <Hero />
+      <Services />
+      <Work />
       <ExperiencePreview />
-      <Education />
-      <Certifications />
       <Skills />
+      <Education />
       <ContactCTA />
     </>
   );

@@ -10,17 +10,17 @@ const education = [
   {
     degreeKey: "education.degrees.specialization",
     institution: "Universidad EAFIT",
-    period: "Jul 2025 — Dec 2025",
+    period: "Jul 2025 – Dec 2025",
   },
   {
     degreeKey: "education.degrees.bachelors",
     institution: "Universidad EAFIT",
-    period: "Jan 2020 — Dec 2024",
+    period: "Jan 2020 – Dec 2024",
   },
   {
     degreeKey: "education.degrees.associates",
     institution: "Politécnico Colombiano 'Jaime Isaza Cadavid'",
-    period: "2018 — 2019",
+    period: "2018 – 2019",
   },
 ];
 

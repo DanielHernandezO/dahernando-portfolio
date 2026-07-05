@@ -12,7 +12,7 @@ const experiences = [
     roles: [
       {
         title: "Software Engineer",
-        period: "Nov 2025 — Present",
+        period: "Nov 2025 – Present",
         bulletKeys: [
           "experience.yuno.bullet1",
           "experience.yuno.bullet2",
@@ -38,7 +38,7 @@ const experiences = [
     roles: [
       {
         title: "Software Engineer",
-        period: "Jan 2023 — Nov 2025",
+        period: "Jan 2023 – Nov 2025",
         bulletKeys: [
           "experience.meli.se.bullet1",
           "experience.meli.se.bullet2",
@@ -48,7 +48,7 @@ const experiences = [
       },
       {
         title: "Software Developer",
-        period: "Jan 2022 — Jan 2023",
+        period: "Jan 2022 – Jan 2023",
         bulletKeys: [
           "experience.meli.sd.bullet1",
           "experience.meli.sd.bullet2",
@@ -65,7 +65,7 @@ const experiences = [
     roles: [
       {
         title: "Teacher Assistant",
-        period: "Jun 2021 — Dec 2021",
+        period: "Jun 2021 – Dec 2021",
         bulletKeys: [
           "experience.eafit.bullet1",
           "experience.eafit.bullet2",
@@ -82,7 +82,7 @@ export function ExperiencePreview() {
   const { t } = useLocale();
 
   return (
-    <section className="py-20">
+    <section id="experience" className="scroll-mt-20 py-20">
       <Container>
         <FadeIn>
           <h2 className="mb-2 text-center text-sm font-medium tracking-wider text-accent-primary">

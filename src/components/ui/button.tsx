@@ -42,6 +42,16 @@ export function Button({
     className
   );
 
+  // Same-page anchors (e.g. "#contact") — use a native <a> so the browser
+  // handles the scroll. Next's <Link> can swallow hash-only navigation.
+  if (href.startsWith("#")) {
+    return (
+      <a href={href} className={classes} {...props}>
+        {children}
+      </a>
+    );
+  }
+
   if (external) {
     return (
       <a

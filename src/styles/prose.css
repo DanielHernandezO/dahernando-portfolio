@@ -130,6 +130,6 @@
 }
 
 [data-highlighted-line] {
-  background-color: rgba(5, 150, 105, 0.1);
+  background-color: rgba(123, 108, 246, 0.12);
   border-left-color: var(--color-accent-primary) !important;
 }

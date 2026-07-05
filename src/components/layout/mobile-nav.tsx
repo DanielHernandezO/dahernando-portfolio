@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react";
 import { motion } from "motion/react";
 import { navItems } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { BrandMark } from "@/components/ui/brand-mark";
 import { LanguageToggle } from "./language-toggle";
 import { useLocale } from "@/hooks/use-locale";
 
@@ -26,12 +27,13 @@ function MobileNavOverlay({
         position: "fixed",
         inset: 0,
         zIndex: 9999,
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "#0F0D18",
       }}
     >
       <div className="flex h-full flex-col px-6 py-6">
         <div className="flex items-center justify-between">
-          <span className="text-lg font-bold text-text-primary">
+          <span className="flex items-center gap-2.5 text-lg font-bold text-text-primary">
+            <BrandMark size={24} />
             DAHO<span className="text-accent-primary">.</span>
           </span>
           <div className="flex items-center gap-2">
@@ -56,7 +58,22 @@ function MobileNavOverlay({
             >
               <Link
                 href={item.href}
-                onClick={onClose}
+                onClick={(e) => {
+                  if (item.href.startsWith("/#") && pathname === "/") {
+                    e.preventDefault();
+                    const id = item.href.slice(2);
+                    onClose();
+                    setTimeout(
+                      () =>
+                        document
+                          .getElementById(id)
+                          ?.scrollIntoView({ behavior: "smooth" }),
+                      80,
+                    );
+                  } else {
+                    onClose();
+                  }
+                }}
                 className={cn(
                   "block rounded-lg px-4 py-3 text-xl font-medium transition-colors",
                   pathname === item.href

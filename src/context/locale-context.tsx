@@ -2,8 +2,8 @@
 
 import {
   createContext,
-  useState,
   useCallback,
+  useSyncExternalStore,
   type ReactNode,
 } from "react";
 import {
@@ -24,11 +24,37 @@ function getNestedValue(obj: TranslationValue, path: string): string {
   return typeof current === "string" ? current : path;
 }
 
-function getInitialLocale(): Locale {
-  if (typeof window === "undefined") return "en";
-  const stored = localStorage.getItem("locale");
-  if (stored === "en" || stored === "es") return stored;
+/* ---- localStorage-backed locale store ----
+   Read through useSyncExternalStore so the server snapshot ("en") and the
+   first client render match (no hydration mismatch), while the client adopts
+   the stored preference right after hydration. */
+const STORAGE_KEY = "locale";
+const listeners = new Set<() => void>();
+
+function subscribe(callback: () => void): () => void {
+  listeners.add(callback);
+  const onStorage = (e: StorageEvent) => {
+    if (e.key === STORAGE_KEY) callback();
+  };
+  window.addEventListener("storage", onStorage);
+  return () => {
+    listeners.delete(callback);
+    window.removeEventListener("storage", onStorage);
+  };
+}
+
+function getSnapshot(): Locale {
+  const stored = localStorage.getItem(STORAGE_KEY);
+  return stored === "en" || stored === "es" ? stored : "en";
+}
+
+function getServerSnapshot(): Locale {
   return "en";
+}
+
+function persistLocale(locale: Locale): void {
+  localStorage.setItem(STORAGE_KEY, locale);
+  listeners.forEach((l) => l());
 }
 
 export interface LocaleContextType {
@@ -46,11 +72,14 @@ export const LocaleContext = createContext<LocaleContextType>({
 });
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(getInitialLocale);
+  const locale = useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    getServerSnapshot,
+  );
 
   const setLocale = useCallback((newLocale: Locale) => {
-    setLocaleState(newLocale);
-    localStorage.setItem("locale", newLocale);
+    persistLocale(newLocale);
   }, []);
 
   const t = useCallback(
