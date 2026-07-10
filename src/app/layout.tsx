@@ -3,6 +3,7 @@ import { inter, jetbrainsMono, spaceGrotesk } from "@/lib/fonts";
 import { siteConfig } from "@/lib/constants";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { ThemeProvider } from "@/components/layout/theme-provider";
 import { LocaleProvider } from "@/context/locale-context";
 import { websiteJsonLd } from "@/lib/structured-data";
 import "@/styles/globals.css";
@@ -73,6 +74,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable}`}
     >
       <body className="min-h-screen bg-bg-primary font-sans text-text-primary antialiased">
@@ -82,13 +84,20 @@ export default function RootLayout({
             __html: JSON.stringify(websiteJsonLd()),
           }}
         />
-        <LocaleProvider>
-          <div className="flex min-h-screen flex-col">
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
-        </LocaleProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          <LocaleProvider>
+            <div className="flex min-h-screen flex-col">
+              <Header />
+              <main className="flex-1">{children}</main>
+              <Footer />
+            </div>
+          </LocaleProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

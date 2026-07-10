@@ -10,6 +10,7 @@ import { navItems } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { BrandMark } from "@/components/ui/brand-mark";
 import { LanguageToggle } from "./language-toggle";
+import { ThemeToggle } from "./theme-toggle";
 import { useLocale } from "@/hooks/use-locale";
 
 function MobileNavOverlay({
@@ -27,7 +28,7 @@ function MobileNavOverlay({
         position: "fixed",
         inset: 0,
         zIndex: 9999,
-        backgroundColor: "#16130F",
+        backgroundColor: "var(--color-bg-primary)",
       }}
     >
       <div className="flex h-full flex-col px-6 py-6">
@@ -37,6 +38,7 @@ function MobileNavOverlay({
             DAHO<span className="text-accent-primary">.</span>
           </span>
           <div className="flex items-center gap-2">
+            <ThemeToggle />
             <LanguageToggle />
             <button
               onClick={onClose}

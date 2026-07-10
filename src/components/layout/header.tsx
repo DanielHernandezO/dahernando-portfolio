@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/container";
 import { BrandMark } from "@/components/ui/brand-mark";
 import { LanguageToggle } from "./language-toggle";
+import { ThemeToggle } from "./theme-toggle";
 import { MobileNav } from "./mobile-nav";
 import { useLocale } from "@/hooks/use-locale";
 
@@ -52,6 +53,7 @@ export function Header() {
                 {t(item.labelKey)}
               </Link>
             ))}
+            <ThemeToggle />
             <LanguageToggle />
             <Link
               href="/#contact"

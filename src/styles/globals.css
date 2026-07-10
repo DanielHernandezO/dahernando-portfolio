@@ -34,6 +34,25 @@
   --radius: 0.75rem;
 }
 
+/* ---- Light theme overrides (next-themes: class="light" on <html>) ---- */
+:root.light {
+  --color-bg-primary: #F4EFE4;    /* Hueso */
+  --color-bg-secondary: #FCFAF4;  /* Superficie elevada cálida */
+  --color-bg-tertiary: #E4DFD4;   /* Borde / divisor */
+
+  --color-text-primary: #16130F;  /* Tinta */
+  --color-text-secondary: #5B544B;
+  --color-text-tertiary: #938A7C;
+
+  --color-accent-primary: #7C1E2E;   /* Vino profundo — texto/punto sobre claro */
+  --color-accent-secondary: #A6304A; /* Vino — fills */
+  --color-accent-tertiary: #4E8A6E;  /* Sage oscuro — estado sobre claro */
+
+  --color-success: #4E8A6E;
+  --color-warning: #B07D1E;
+  --color-danger: #C0504A;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -51,7 +70,7 @@ h1, h2, h3 {
 
 ::selection {
   background-color: var(--color-accent-primary);
-  color: #16130F;
+  color: var(--color-bg-primary);
 }
 
 /* Scrollbar — dark */
