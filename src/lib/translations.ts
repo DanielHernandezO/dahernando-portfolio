@@ -7,7 +7,7 @@ export const translations = {
       projects: "Projects",
       services: "Services",
       work: "Work",
-      cta: "Start a project",
+      cta: "Let's talk",
     },
     hero: {
       subtitle: "BACKEND · PAYMENTS · CUSTOM SOFTWARE",
@@ -15,8 +15,8 @@ export const translations = {
       headlineBottom: "scale, and don't break.",
       description:
         "Payments infrastructure at Yuno. Distributed systems at scale at Mercado Libre. Now engineering products, architecture, and custom software for companies that need it to just work.",
-      ctaPrimary: "Start a project",
-      ctaSecondary: "See the work",
+      ctaPrimary: "Let's talk about your system",
+      ctaSecondary: "See real cases",
       trust: "Trusted background",
     },
     services: {
@@ -172,15 +172,15 @@ export const translations = {
       title: "Have a system worth building?",
       description:
         "Tell me the problem you're solving. Whether it's payments, architecture, or a custom system your business runs on, let's talk. Usually reply within 24 hours.",
-      cta: "Get in touch",
+      cta: "Let's talk",
     },
     blog: {
       title: "Blog",
       description:
-        "Thoughts on distributed systems, backend engineering, and software architecture.",
-      emptyTitle: "Articles Coming Soon",
+        "How money moves — notes on payments, distributed systems, and backend architecture.",
+      emptyTitle: "How money moves",
       emptyDescription:
-        "I'm working on articles about distributed systems, backend architecture, and lessons learned from building scalable software. Stay tuned!",
+        "A series on payments and the distributed systems behind them, explained clearly — with diagrams and real code. Starting with payments. First one soon.",
     },
     about: {
       title: "About Me",
@@ -211,7 +211,7 @@ export const translations = {
       projects: "Proyectos",
       services: "Servicios",
       work: "Casos",
-      cta: "Iniciar proyecto",
+      cta: "Hablemos",
     },
     hero: {
       subtitle: "BACKEND · PAGOS · SOFTWARE A MEDIDA",
@@ -219,8 +219,8 @@ export const translations = {
       headlineBottom: "escalan y no se caen.",
       description:
         "Infraestructura de pagos en Yuno. Sistemas distribuidos a escala en Mercado Libre. Hoy construyo productos, arquitectura y software a medida para empresas que necesitan que simplemente funcione.",
-      ctaPrimary: "Iniciar un proyecto",
-      ctaSecondary: "Ver el trabajo",
+      ctaPrimary: "Hablemos de tu sistema",
+      ctaSecondary: "Ver casos reales",
       trust: "Trayectoria",
     },
     services: {
@@ -231,7 +231,7 @@ export const translations = {
         name: "Ingeniería de Producto",
         headline: "Productos reales, no prototipos.",
         description:
-          "Backend, APIs e infraestructura de grado producción, diseñados para escalar desde tu primer usuario hasta el millón sin reescribir.",
+          "Backend, APIs e infraestructura de nivel de producción, diseñados para escalar desde tu primer usuario hasta el millón sin reescribir.",
         who: "Founders · startups",
       },
       consulting: {
@@ -245,7 +245,7 @@ export const translations = {
         name: "Sistemas a Medida",
         headline: "Software construido alrededor de tu operación.",
         description:
-          "Plataformas hechas a la medida de cómo funciona tu negocio de verdad: el sistema sobre el que corre tu empresa. Construido para poseer, no para alquilar.",
+          "Plataformas hechas a la medida de cómo funciona tu negocio de verdad: el sistema sobre el que corre tu empresa. Construido para ser tuyo, no alquilado.",
         who: "PYMEs · empresas",
       },
     },
@@ -255,7 +255,7 @@ export const translations = {
       cta: "Construyamos el tuyo",
       readCase: "Hablemos de tu sistema",
       backing:
-        "El estándar detrás viene de años construyendo sistemas a escala.",
+        "El estándar que lo respalda viene de años construyendo sistemas a escala.",
       backingLink: "Mira mi experiencia →",
       reconstructora: {
         client: "Reconstructora Medellín",
@@ -270,7 +270,7 @@ export const translations = {
         client: "Mercado Libre",
         type: "Pagos · Sistemas distribuidos a escala",
         summary:
-          "Sistemas backend en la mayor empresa de tecnología de Latinoamérica: resolución automática de reclamos que redujo devoluciones y costos, cifrado que protege 23K usuarios y observabilidad que mejoró los datos de decisión en 75%.",
+          "Sistemas backend en la mayor empresa de tecnología de Latinoamérica: resolución automática de reclamos que redujo devoluciones y costos, cifrado que protege a 23K usuarios y observabilidad que mejoró los datos de decisión en 75%.",
       },
       yuno: {
         client: "Yuno",
@@ -381,15 +381,15 @@ export const translations = {
     blog: {
       title: "Blog",
       description:
-        "Reflexiones sobre sistemas distribuidos, ingeniería backend y arquitectura de software.",
-      emptyTitle: "Artículos Próximamente",
+        "Así se mueve el dinero — notas sobre pagos, sistemas distribuidos y arquitectura backend.",
+      emptyTitle: "Así se mueve el dinero",
       emptyDescription:
-        "Estoy trabajando en artículos sobre sistemas distribuidos, arquitectura backend y lecciones aprendidas construyendo software escalable. ¡Pronto!",
+        "Una serie sobre pagos y los sistemas distribuidos que los sostienen, explicados claro — con diagramas y código real. Empiezo por los pagos. Pronto el primero.",
     },
     about: {
       title: "Sobre Mí",
       introText:
-        "Soy Daniel, un Ingeniero de Software en Colombia, combinando experiencia técnica profunda con una fuerte mentalidad de negocio. Destaco en equipos multifuncionales donde la comunicación clara y la colaboración impulsan resultados. Ya sea liderando iniciativas técnicas, mentoreando compañeros o traduciendo requerimientos complejos en soluciones escalables, creo que el mejor software lo construyen personas que entienden tanto la tecnología como el problema que resuelve.",
+        "Soy Daniel, un ingeniero de software en Colombia, combinando experiencia técnica profunda con una fuerte mentalidad de negocio. Destaco en equipos multifuncionales donde la comunicación clara y la colaboración impulsan resultados. Ya sea liderando iniciativas técnicas, guiando a compañeros o traduciendo requerimientos complejos en soluciones escalables, creo que el mejor software lo construyen personas que entienden tanto la tecnología como el problema que resuelve.",
       beyondCode: "Vida Más Allá del Código",
       beyondCodeText:
         "Cuando no estoy escribiendo código, me encontrarás pasando tiempo con mi familia, viajando y explorando nuevos lugares, y disfrutando momentos con amigos y compañeros. Creo que las mejores ideas surgen de experiencias diversas y conexiones genuinas.",
