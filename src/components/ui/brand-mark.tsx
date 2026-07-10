@@ -1,10 +1,7 @@
-"use client";
-
-import { useId } from "react";
-
 /**
- * DAHO. — «Apertura» isotype.
- * Abstract 3-blade aperture (no letterforms). Iris → Coral gradient.
+ * DAHO. — «System mark» (isotipo).
+ * Un nodo central de vino conectado a tres nodos: el punto donde el dinero
+ * y los sistemas se conectan. Monocromo, sin degradados. Escala de favicon a hero.
  */
 export function BrandMark({
   size = 26,
@@ -13,7 +10,6 @@ export function BrandMark({
   size?: number;
   className?: string;
 }) {
-  const gradId = useId();
   return (
     <svg
       width={size}
@@ -22,27 +18,21 @@ export function BrandMark({
       className={className}
       role="img"
       aria-label="DAHO"
+      fill="none"
     >
-      <defs>
-        <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#7B6CF6" />
-          <stop offset="0.5" stopColor="#C56BF5" />
-          <stop offset="1" stopColor="#FF8A6B" />
-        </linearGradient>
-      </defs>
-      <g fill={`url(#${gradId})`}>
-        <path d="M60,60 C58,35 71,19 93,19 C83,40 79,46 60,60 Z" />
-        <path
-          d="M60,60 C58,35 71,19 93,19 C83,40 79,46 60,60 Z"
-          transform="rotate(120 60 60)"
-          opacity="0.82"
-        />
-        <path
-          d="M60,60 C58,35 71,19 93,19 C83,40 79,46 60,60 Z"
-          transform="rotate(240 60 60)"
-          opacity="0.66"
-        />
+      <g
+        stroke="var(--color-text-tertiary)"
+        strokeWidth="4"
+        strokeLinecap="round"
+      >
+        <line x1="60" y1="60" x2="28" y2="30" />
+        <line x1="60" y1="60" x2="95" y2="46" />
+        <line x1="60" y1="60" x2="49" y2="97" />
       </g>
+      <circle cx="28" cy="30" r="8.5" fill="var(--color-text-primary)" />
+      <circle cx="95" cy="46" r="8.5" fill="var(--color-text-primary)" />
+      <circle cx="49" cy="97" r="8.5" fill="var(--color-text-primary)" />
+      <circle cx="60" cy="60" r="15" fill="var(--color-accent-secondary)" />
     </svg>
   );
 }

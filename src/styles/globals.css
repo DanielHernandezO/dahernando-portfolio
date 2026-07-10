@@ -2,29 +2,29 @@
 
 /* ============================================================
    DAHO. — Brand design system
-   Iris & Coral sobre tinta violeta. Dark-first.
+   Tinta, Hueso y Vino. Dark-first. (Paleta elegida por panel de diseño)
    Token names kept stable so existing components adopt the theme.
    ============================================================ */
 @theme {
-  /* Surfaces */
-  --color-bg-primary: #0F0D18;    /* Tinta — fondo base (violeta-negro) */
-  --color-bg-secondary: #191527;  /* Superficie elevada */
-  --color-bg-tertiary: #2B2540;   /* Borde / divisor */
+  /* Surfaces — Tinta cálida */
+  --color-bg-primary: #16130F;    /* Tinta — fondo base */
+  --color-bg-secondary: #211C16;  /* Superficie elevada */
+  --color-bg-tertiary: #322B22;   /* Borde / divisor */
 
-  /* Text */
-  --color-text-primary: #F4F2FC;  /* Niebla — casi blanco cálido */
-  --color-text-secondary: #A6A0BE;/* Secundario */
-  --color-text-tertiary: #6E6890; /* Tenue — captions/meta */
+  /* Text — Hueso */
+  --color-text-primary: #F4EFE4;  /* Hueso — casi blanco cálido */
+  --color-text-secondary: #B8AE9E;/* Secundario */
+  --color-text-tertiary: #8B8173; /* Tenue — captions/meta */
 
-  /* Accent — Iris & Coral */
-  --color-accent-primary: #9A8CFF;   /* Iris (sobre oscuro) ~8:1 */
-  --color-accent-secondary: #FF8A6B; /* Coral — contra-acento cálido */
-  --color-accent-tertiary: #5BE3B4;  /* Menta — highlight raro */
+  /* Accent — Vino */
+  --color-accent-primary: #CB6274;   /* Vino vivo — texto/punto sobre oscuro */
+  --color-accent-secondary: #A6304A; /* Vino — fills, glows */
+  --color-accent-tertiary: #86B7A0;  /* Sage — solo estado "healthy" */
 
   /* State */
-  --color-success: #5BE3B4;
-  --color-warning: #FFB86B;
-  --color-danger: #FF6B81;
+  --color-success: #86B7A0;
+  --color-warning: #D9A94F;
+  --color-danger: #D9736F;
 
   /* Typography */
   --font-display: var(--font-space-grotesk);
@@ -51,7 +51,7 @@ h1, h2, h3 {
 
 ::selection {
   background-color: var(--color-accent-primary);
-  color: #0F0D18;
+  color: #16130F;
 }
 
 /* Scrollbar — dark */
@@ -73,7 +73,7 @@ h1, h2, h3 {
 
 /* Blueprint dot-grid background for hero / section atmospheres */
 .brand-grid {
-  background-image: radial-gradient(circle, rgba(64, 56, 96, 0.55) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(140, 120, 100, 0.32) 1px, transparent 1px);
   background-size: 34px 34px;
   -webkit-mask-image: radial-gradient(120% 90% at 60% 0%, #000 30%, transparent 78%);
   mask-image: radial-gradient(120% 90% at 60% 0%, #000 30%, transparent 78%);
@@ -81,15 +81,12 @@ h1, h2, h3 {
 
 /* Iris glow accent used behind hero headline / focal points */
 .brand-glow {
-  background: radial-gradient(circle, rgba(123, 108, 246, 0.18) 0%, rgba(123, 108, 246, 0.04) 35%, transparent 62%);
+  background: radial-gradient(circle, rgba(166, 48, 74, 0.16) 0%, rgba(166, 48, 74, 0.04) 35%, transparent 62%);
 }
 
-/* Iris → Coral signature gradient for display accents */
+/* Solid wine for display accents (sin degradados — elegancia por restricción) */
 .brand-gradient-text {
-  background-image: linear-gradient(100deg, #7B6CF6, #C56BF5 52%, #FF8A6B);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--color-accent-primary);
 }
 
 /* Terminal-style mono overline */

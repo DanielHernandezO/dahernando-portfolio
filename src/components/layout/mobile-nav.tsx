@@ -27,7 +27,7 @@ function MobileNavOverlay({
         position: "fixed",
         inset: 0,
         zIndex: 9999,
-        backgroundColor: "#0F0D18",
+        backgroundColor: "#16130F",
       }}
     >
       <div className="flex h-full flex-col px-6 py-6">
