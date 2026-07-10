@@ -10,11 +10,11 @@ export const translations = {
       cta: "Let's talk",
     },
     hero: {
-      subtitle: "BACKEND · PAYMENTS · CUSTOM SOFTWARE",
-      headlineTop: "Backend systems that move money,",
-      headlineBottom: "scale, and don't break.",
+      subtitle: "SOFTWARE · SYSTEMS · PAYMENTS",
+      headlineTop: "From chaos to",
+      headlineBottom: "code.",
       description:
-        "Payments infrastructure at Yuno. Distributed systems at scale at Mercado Libre. Now engineering products, architecture, and custom software for companies that need it to just work.",
+        "Software engineer: distributed systems and payments. At Yuno, before at Mercado Libre.",
       ctaPrimary: "Let's talk about your system",
       ctaSecondary: "See real cases",
       trust: "Trusted background",
@@ -214,11 +214,11 @@ export const translations = {
       cta: "Hablemos",
     },
     hero: {
-      subtitle: "BACKEND · PAGOS · SOFTWARE A MEDIDA",
-      headlineTop: "Sistemas backend que mueven dinero,",
-      headlineBottom: "escalan y no se caen.",
+      subtitle: "SOFTWARE · SISTEMAS · PAGOS",
+      headlineTop: "Del caos al",
+      headlineBottom: "código.",
       description:
-        "Infraestructura de pagos en Yuno. Sistemas distribuidos a escala en Mercado Libre. Hoy construyo productos, arquitectura y software a medida para empresas que necesitan que simplemente funcione.",
+        "Ingeniero de software: sistemas distribuidos y pagos. En Yuno, antes en Mercado Libre.",
       ctaPrimary: "Hablemos de tu sistema",
       ctaSecondary: "Ver casos reales",
       trust: "Trayectoria",
